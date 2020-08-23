@@ -28,6 +28,11 @@ body {
   color: #F2F3F4;
 }
 
+.nav-link:hover {
+  cursor: pointer; 
+}
+
+
 .property-listings {
   width: 100%;
   display: flex;
