@@ -64,11 +64,12 @@ exports.getUserWithId = getUserWithId;
 //  Add a new user to the database. 
 const addUser =  (user) => {
   return pool.query(`
-    INSERT INTO users (name, email) 
-    VALUES ($1, $2)
+    INSERT INTO users (name, email,password) 
+    VALUES ($1, $2, $3)
     RETURNING *;
-    `, [user.name, user.email])
+    `, [user.name, user.email, user.password])
     .then(res => {
+      console.log(res.rows[0]);
       return res.rows[0];
     })
     .catch(err => {
@@ -134,7 +135,7 @@ const getAllProperties = function(options, limit = 10) {
     }
 
     queryParams.push(Number(options.minimum_price));
-    queryString += ` price > $${queryParams.length} `;
+    queryString += ` (price / 100 >= $${queryParams.length}) `;
   }
 
   if (options.maximum_price) {
@@ -145,7 +146,7 @@ const getAllProperties = function(options, limit = 10) {
     }
 
     queryParams.push(Number(options.maximum_price));
-    queryString += ` price < $${queryParams.length}`;
+    queryString += ` (price / 100 <= $${queryParams.length})`;
   }
 
   if (options.city) {
@@ -209,12 +210,13 @@ const addProperty = function(property) {
   }
   
 
-  let addPropQuery = `INSERT INTO properties (${propertyKeys.join(', ')}) 
+  let addPropQuery = `INSERT INTO items (${propertyKeys.join(', ')}) 
                         VALUES (${propertyValues.join(', ')})
                         RETURNING *;
                         `;
 
-
+ console.log('QUERY string: ',addPropQuery);
+ console.log('QUERY values: ', queryValues)
   return pool.query(addPropQuery, queryValues)
   .then(res => {
     res.rows[0];

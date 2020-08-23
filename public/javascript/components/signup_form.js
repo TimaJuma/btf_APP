@@ -5,15 +5,21 @@ $(() => {
         <p>Sign Up</p>
 
         <div class="sign-up-form__field-wrapper">
-            <input type="text" name="name" placeholder="Username">
+            <input type="text" name="name" placeholder="Username" required>
           </div>
 
         <div class="sign-up-form__field-wrapper">
           <input type="email" name="email" placeholder="Email">
         </div>
+
+        <div class="sign-up-form__field-wrapper">
+        <input type="tel" id="tel" name="tel"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        placeholder="Tel: 123-456-7890">
+        </div>
   
         <div class="sign-up-form__field-wrapper">
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" required>
           </div>
   
         <div class="sign-up-form__field-wrapper">

@@ -57,14 +57,15 @@ $(() => {
     // const data2 = $(this).serializeArray();
 
   
-    const title = this.title.value;
-    const min_price = this.minimum_price.value;
-    const max_price = this.maximum_price.value;
-    const city = this.city.value;
+    // const title = this.title.value;
+    // const min_price = this.minimum_price.value;
+    // const max_price = this.maximum_price.value;
+    // const city = this.city.value;
 
-    const formValues = {title, min_price, max_price, city};
+    // const formValues = {title, min_price, max_price, city};
 
-    getAllListings(formValues).then(function( json ) {
+    getAllListings(data).then(function( json ) {
+      console.log('json from search_form:', json)
       propertyListings.addProperties(json.properties);
       views_manager.show('listings');
     });

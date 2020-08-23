@@ -31,7 +31,8 @@ function signUp(data) {
 function getAllListings(params) {
   let url = "/api/items";
   if (params) {
-    return Promise.resolve(params);
+    url += "?" + params;
+    console.log('url: ', url);
   }
   return $.ajax({
     url,
@@ -48,7 +49,7 @@ function getAllReservations() {
 const submitProperty = function(data) {
   return $.ajax({
     method: "POST",
-    url: "/api/properties",
+    url: "/api/items",
     data,
   });
 }

@@ -6,6 +6,7 @@ module.exports = function(router, database) {
   router.post('/', (req, res) => {
     const user = req.body;
     user.password = bcrypt.hashSync(user.password, 12);
+    console.log('password:', user.password)
     database.addUser(user)
     .then(user => {
       if (!user) {
@@ -26,8 +27,7 @@ module.exports = function(router, database) {
   const login =  function(email, password) {
     return database.getUserWithEmail(email)
     .then(user => {
-      // if (bcrypt.compareSync(password, user.password)) {
-      if (user) {
+     if (bcrypt.compareSync(password, user.password)) {
         return user;
       }
       return null;

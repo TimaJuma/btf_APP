@@ -28,7 +28,7 @@ module.exports = function(router, database) {
     console.log('req:', req);
     console.log('res:', res);
     const userId = req.session.userId;
-    database.addProperty({...req.body, owner_id: userId})
+    database.addProperty({...req.body, user_id: userId})
       .then(property => {
         res.send(property);
       })
