@@ -14,7 +14,8 @@ $(() => {
 
     switch (item) {
       case 'listings':
-        $propertyListings.appendTo($main);
+        const middle = $('#middle')
+        $propertyListings.appendTo(middle);
         break;
       case 'newProperty':
         $newPropertyForm.appendTo($main);

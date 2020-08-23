@@ -1,9 +1,11 @@
 $(() => {
 
   const $propertyListings = $(`
-  <section class="property-listings" id="property-listings">
-      <p>Loading...</p>
-    </section>
+  <div class="container property-listings" id="property-listings">
+    <div class="row">
+
+    </div>
+  </div>
   `);
   window.$propertyListings = $propertyListings;
 

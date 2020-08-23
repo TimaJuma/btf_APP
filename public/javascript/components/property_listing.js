@@ -3,7 +3,7 @@ $(() => {
   
   function createListing(item, isReservation) {
     return `
-    <article class="property-listing" data-aos="fade-in" data-aos-duration="1500">
+      <article class="property-listing col-xl-2" data-aos="fade-in" data-aos-duration="1500">
         <section class="property-listing__preview-image">
           <img src="https://thumbs-prod.si-cdn.com/d4e3zqOM5KUq8m0m-AFVxuqa5ZM=/800x600/filters:no_upscale():focal(554x699:555x700)/https://public-media.si-cdn.com/filer/a4/04/a404c799-7118-459a-8de4-89e4a44b124f/img_1317.jpg" alt="house">
         </section>
