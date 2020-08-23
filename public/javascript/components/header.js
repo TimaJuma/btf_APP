@@ -38,7 +38,7 @@ $(() => {
         <div class="navbar-nav navbar-right">
           <li class="home nav-item nav-link" href="#">Home 🏠<span class="sr-only">(current)</span></li>
           <li class="search_button nav-item nav-link">Search</li>
-          <li class="nav-item nav-link">${user.name}</li>
+          <li class="user_info nav-item nav-link">${user.name}</li>
           <li class="create_listing_button nav-item nav-link">Add post</li>
           <li class="my_listing_button nav-item nav-link">My posts</li>
           <li class="my_reservations_button nav-item nav-link">My favourites</li>
