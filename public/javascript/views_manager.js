@@ -19,7 +19,8 @@ $(() => {
         $newPropertyForm.appendTo($main);
         break;
       case 'searchProperty':
-        $searchPropertyForm.appendTo($main);
+        const middle = $('#middle')
+        $searchPropertyForm.appendTo(middle);
         break;
       case 'logIn':
         $logInForm.appendTo($main);

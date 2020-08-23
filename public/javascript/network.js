@@ -29,7 +29,7 @@ function signUp(data) {
 }
 
 function getAllListings(params) {
-  let url = "/api/properties";
+  let url = "/api/items";
   if (params) {
     return Promise.resolve(params);
   }

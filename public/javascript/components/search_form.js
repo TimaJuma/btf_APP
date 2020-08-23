@@ -64,7 +64,7 @@ $(() => {
 
     const formValues = {title, min_price, max_price, city};
 
-    getAllListings(data).then(function( json ) {
+    getAllListings(formValues).then(function( json ) {
       propertyListings.addProperties(json.properties);
       views_manager.show('listings');
     });
