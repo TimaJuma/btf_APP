@@ -90,9 +90,18 @@ $(() => {
     views_manager.show('searchProperty');
   });
 
+  $('header').on('click', '.info_button', function() {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.login_button', () => {
     views_manager.show('logIn');
   });
+
+  $("header").on('click', '.user_info', () => {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.sign-up_button', () => {
     views_manager.show('signUp');
   });

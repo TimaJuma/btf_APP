@@ -64,10 +64,10 @@ exports.getUserWithId = getUserWithId;
 //  Add a new user to the database. 
 const addUser =  (user) => {
   return pool.query(`
-    INSERT INTO users (name, email,password) 
-    VALUES ($1, $2, $3)
+    INSERT INTO users (name, email, tel, password) 
+    VALUES ($1, $2, $3, $4)
     RETURNING *;
-    `, [user.name, user.email, user.password])
+    `, [user.name, user.email, user.tel, user.password])
     .then(res => {
       console.log(res.rows[0]);
       return res.rows[0];
