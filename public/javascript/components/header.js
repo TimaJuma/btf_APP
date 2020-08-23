@@ -25,7 +25,7 @@ $(() => {
         <ul>
           <li class="home">🏠</li>
           <li class="search_button">Search</li>
-          <li>${user.name}</li>
+          <li class="user_info">${user.name}</li>
           <li class="create_listing_button">Add post</li>
           <li class="my_listing_button">My posts</li>
           <li class="my_reservations_button">My favourites</li>
@@ -76,9 +76,18 @@ $(() => {
     views_manager.show('searchProperty');
   });
 
+  $('header').on('click', '.info_button', function() {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.login_button', () => {
     views_manager.show('logIn');
   });
+
+  $("header").on('click', '.user_info', () => {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.sign-up_button', () => {
     views_manager.show('signUp');
   });

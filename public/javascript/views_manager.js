@@ -9,6 +9,7 @@ $(() => {
     $propertyListings.detach();
     $searchPropertyForm.detach();
     $logInForm.detach();
+    $userInfo.detach();
     $signUpForm.detach();
 
     switch (item) {
@@ -17,6 +18,9 @@ $(() => {
         break;
       case 'newProperty':
         $newPropertyForm.appendTo($main);
+        break;
+        case 'userInfo':
+        $userInfo.appendTo($main);
         break;
       case 'searchProperty':
         const middle = $('#middle')
