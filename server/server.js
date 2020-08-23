@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+
+const showWidgets = require('./database');
+
 app.use(cookieSession({
   name: 'session',
   keys: ['key1']

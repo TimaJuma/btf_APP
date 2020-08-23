@@ -31,7 +31,7 @@ function signUp(data) {
 function getAllListings(params) {
   let url = "/api/properties";
   if (params) {
-    url += "?" + params;
+    return Promise.resolve(params);
   }
   return $.ajax({
     url,
