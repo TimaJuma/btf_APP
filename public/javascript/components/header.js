@@ -36,9 +36,9 @@ $(() => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav navbar-right">
-          <a class="home nav-item nav-link" href="#">Home 🏠<span class="sr-only">(current)</span></a>
+          <li class="home nav-item nav-link" href="#">Home 🏠<span class="sr-only">(current)</span></li>
           <li class="search_button nav-item nav-link">Search</li>
-          <li>${user.name}</li>
+          <li class="nav-item nav-link">${user.name}</li>
           <li class="create_listing_button nav-item nav-link">Add post</li>
           <li class="my_listing_button nav-item nav-link">My posts</li>
           <li class="my_reservations_button nav-item nav-link">My favourites</li>
