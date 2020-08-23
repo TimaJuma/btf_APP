@@ -1,12 +1,28 @@
+.navbar {
+  background-color: #20253a;
+}
+
+.navbar-brand {
+  font-family: 'Oswald';
+  color: #F2F3F4;
+}
+
+.navbar-toggler {
+  color: #F2F3F4;
+  border: none;
+}
+
+.nav-link {
+  font-family: ;
+  color: #F2F3F4;
+}
+
 .property-listings {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column; }
 
-  #middle{
-    border: 3px solid goldenrod;
-  }
 
 .property-listing {
   margin: 20px 0;
