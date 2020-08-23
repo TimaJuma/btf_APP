@@ -26,6 +26,7 @@ body {
 .nav-link {
   font-family: ;
   color: #F2F3F4;
+  cursor: pointer;
 }
 
 .property-listings {
