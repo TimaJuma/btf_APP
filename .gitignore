@@ -1,1 +1,14 @@
 node_modules
+
+
+*decide on new feature*
+git checkout -b few_feature
+*do some coding*
+git add .
+git commit -m 'message'
+git push 
+git checkout some_branch
+git merge few_feature
+git add .
+git commit -m 'message'
+git push 
