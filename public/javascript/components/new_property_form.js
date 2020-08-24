@@ -25,7 +25,7 @@ $(() => {
 
       <div class="new-property-form__field-wrapper">
         <label for="new-property-form__cost">Price</label>
-        <input placeholder="Price" type="number" name="price" id="new-property-form__cost">
+        <input placeholder="Price" type="number"  step="0.01" min="0" name="price" id="new-property-form__cost">
       </div>
 
       <div class="new-property-form__field-wrapper">

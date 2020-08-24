@@ -51,7 +51,6 @@ const getUserWithId = (id) => {
     LIMIT 1;
     `, [id])
     .then(res => {
-      console.log(res.rows[0]);
       return res.rows[0];
     })
     .catch(err => {
@@ -151,8 +150,13 @@ const getAllProperties = function(options, limit = 10) {
   }
 
   if (options.city) {
+    if (queryString.includes('WHERE')) {
+      queryString += ` AND `;
+    } else {
+      queryString += `WHERE`;
+    }
     queryParams.push(`%${options.city}%`);
-    queryString += `WHERE city LIKE $${queryParams.length} `;
+    queryString += ` city LIKE $${queryParams.length} `;
   }
 
   // if (options.owner_id) {
@@ -205,6 +209,9 @@ const addProperty = function(property) {
 
 
   for (const key in property) {
+    if(key === 'price'){
+      property[key] = Number(property[key]) * 100;
+    }
     propertyKeys.push(key);
     propertyValues.push(`$${propertyKeys.length}`);
     queryValues.push(property[key]);
