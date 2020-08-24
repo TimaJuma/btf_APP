@@ -1,8 +1,42 @@
+body {
+  padding-top: 70px;
+}
+
+.navbar {
+  background-color: #20253a;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+.navbar-brand {
+  font-family: 'Oswald';
+  color: #F2F3F4;
+}
+
+.navbar-toggler {
+  color: #F2F3F4;
+  border: none;
+}
+
+.nav-link {
+  /* font-family: ; */
+  color: #F2F3F4;
+  cursor: pointer;
+}
+
 .property-listings {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+
 
 .property-listing {
   margin: 20px 0;

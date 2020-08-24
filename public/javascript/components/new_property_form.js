@@ -3,7 +3,7 @@ $(() => {
   
 
   const $newPropertyForm = $(`
-  <form action="/api/properties" method="post" id="new-property-form" class="new-property-form">
+  <form action="/api/items" method="post" id="new-property-form" class="new-property-form">
       <div class="new-property-form__field-wrapper">
         <label for="new-property-form__title">Title</label>
         <input type="text" name="title" placeholder="Title" id="new-property-form__title">
@@ -22,45 +22,30 @@ $(() => {
           </select>
         </div> -->
 
-      <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__bedrooms"># 🛌</label>
-        <input placeholder="# 🛌" type="number" name="number_of_bedrooms" id="new-property-form__bedrooms">
-
-        <label for="new-property-form__bathrooms"># 🚽</label>
-        <input placeholder="# 🚽" type="number" name="number_of_bathrooms" id="new-property-form__rooms">
-
-        <label for="new-property-form__parking"># 🚘</label>
-        <input placeholder="# 🚘" type="number" name="parking_spaces" id="new-property-form__parking">
-      </div>
 
       <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__cost">Cost Per Night</label>
-        <input placeholder="Cost Per Night" type="number" name="cost_per_night" id="new-property-form__cost">
+        <label for="new-property-form__cost">Price</label>
+        <input placeholder="Price" type="number"  step="0.01" min="0" name="price" id="new-property-form__cost">
       </div>
 
       <div class="new-property-form__field-wrapper">
         <label for="new-property-form__thumbnail">Thumbnail Image</label>
-        <input placeholder="Thumbnail Image" type="text" name="thumbnail_photo_url" id="new-property-form__thumbnail">
+        <input placeholder="Thumbnail Image" type="text" id="new-property-form__thumbnail">
       </div>
 
       <div class="new-property-form__field-wrapper">
         <label for="new-property-form__cover">Cover Image</label>
-        <input placeholder="Cover Image" type="text" name="cover_photo_url" id="new-property-form__cover">
+        <input placeholder="Cover Image" type="text"  id="new-property-form__cover">
       </div>
 
       <hr>
 
-      <div class="new-property-form__field-wrapper">
-          <label for="new-property-form__street">Street</label>
-          <input placeholder="Street" type="text" name="street" id="new-property-form__street" />
-        </div>
 
         <div class="new-property-form__field-wrapper">
           <label for="new-property-form__country">Country</label>
           <select id="new-property-form__country" name="country" data-country-selected="CA">
               <option value="US">United States</option>
               <option value="CA">Canada</option>
-              <option value="BR">Brazil</option>
           </select>
         </div>
         <div id="new-property-form__locality-fields">
@@ -69,14 +54,10 @@ $(() => {
             <label for="new-property-form__city">City</label>
             <input placeholder="City" type="text" name="city" id="new-property-form__city" />
           </div>
-          <div class="new-property-form__field-wrapper">
+          <!-- <div class="new-property-form__field-wrapper">
             <label for="new-property-form__state">Administrative Area</label>
             <input placeholder="Administrative Area" type="text" name="province" id="new-property-form__state" />
-          </div>
-          <div class="new-property-form__field-wrapper">
-            <label for="new-property-form__zip">Postal Code</label>
-            <input placeholder="Postal Code" type="text" name="post_code" id="new-property-form__zip" />
-          </div>
+          </div> --> 
         </div>
 
         <div class="new-property-form__field-wrapper">
@@ -106,6 +87,7 @@ $(() => {
     views_manager.show('none');
 
     const data = $(this).serialize();
+    console.log('Data from addItem form: ', data);
     submitProperty(data)
     .then(() => {
       views_manager.show('listings');

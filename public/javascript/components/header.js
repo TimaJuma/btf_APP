@@ -10,28 +10,42 @@ $(() => {
 
     if (!user) {
       userLinks = `
-      <nav id="page-header__user-links" class="page-header__user-links">
-        <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
-          <li class="login_button">Log In</li>
-          <li class="sign-up_button">Sign Up</li>
+
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-dark navbar-expand-lg">
+      <a class="navbar-brand" href="#">BTF Sales</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+          <li class="home nav-item nav-link" href="#"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></li>
+          <li class="search_button nav-item nav-link"><i class="fa fa-search"></i> Search</li>
+          <li class="login_button nav-item nav-link"><i class="fas fa-sign-in-alt"></i> Log In</li>
+          <li class="sign-up_button nav-item nav-link"><i class="fa fa-user-plus"></i> Sign Up</li>
         </ul>
-      </nav>
+      </div>
+    </nav>
       `
     } else {
       userLinks = `
-      <nav id="page-header__user-links" class="page-header__user-links">
-        <ul>
-          <li class="home">🏠</li>
-          <li class="search_button">Search</li>
-          <li>${user.name}</li>
-          <li class="create_listing_button">Create Listing</li>
-          <li class="my_listing_button">My Listings</li>
-          <li class="my_reservations_button">My Reservations</li>
-          <li class="logout_button">Log Out</li>
-        </ul>
-      </nav>
+
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-dark navbar-expand-lg">
+      <a class="navbar-brand" href="#">BTF Sales</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav navbar-right">
+          <li class="home nav-item nav-link" href="#">Home 🏠<span class="sr-only">(current)</span></li>
+          <li class="search_button nav-item nav-link">Search</li>
+          <li class="user_info nav-item nav-link">${user.name}</li>
+          <li class="create_listing_button nav-item nav-link">Add post</li>
+          <li class="my_listing_button nav-item nav-link">My posts</li>
+          <li class="my_reservations_button nav-item nav-link">My favourites</li>
+          <li class="logout_button nav-item nav-link">Log Out</li>
+        </div>
+      </div>
+    </nav>
       `
     }
 
@@ -56,8 +70,9 @@ $(() => {
   });
   $("header").on("click", '.my_listing_button', function() {
     propertyListings.clearListings();
-    getAllListings(`owner_id=${currentUser.id}`)
+    getAllListings(`user_id=${currentUser.id}`)
       .then(function(json) {
+        console.log(json);
         propertyListings.addProperties(json.properties);
         views_manager.show('listings');
     });
@@ -76,9 +91,18 @@ $(() => {
     views_manager.show('searchProperty');
   });
 
+  $('header').on('click', '.info_button', function() {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.login_button', () => {
     views_manager.show('logIn');
   });
+
+  $("header").on('click', '.user_info', () => {
+    views_manager.show('userInfo');
+  });
+
   $("header").on('click', '.sign-up_button', () => {
     views_manager.show('signUp');
   });
