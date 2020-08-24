@@ -68,7 +68,7 @@ module.exports = function(router, database) {
           return;
         }
     
-        res.send({user: {name: user.name, email: user.email, id: userId}});
+        res.send({user: {name: user.name, email: user.email, tel: user.tel, id: userId}});
       })
       .catch(e => res.send(e));
   });
