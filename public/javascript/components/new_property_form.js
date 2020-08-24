@@ -43,9 +43,9 @@ $(() => {
 
         <div class="new-property-form__field-wrapper">
           <label for="new-property-form__country">Country</label>
-          <select id="new-property-form__country" name="country" data-country-selected="CA">
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
+          <select id="new-property-form__country" name="country" data-country-selected="Canada">
+              <option value="USA">United States</option>
+              <option value="Canada">Canada</option>
           </select>
         </div>
         <div id="new-property-form__locality-fields">
