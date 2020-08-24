@@ -36,7 +36,7 @@ $(() => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav navbar-right">
-          <li class="home nav-item nav-link" href="#">Home 🏠<span class="sr-only">(current)</span></li>
+          <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
           <li class="search_button nav-item nav-link">Search</li>
           <li class="user_info nav-item nav-link">${user.name}</li>
           <li class="create_listing_button nav-item nav-link">Add post</li>
