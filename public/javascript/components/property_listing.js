@@ -22,5 +22,4 @@ $(() => {
   }
 
   window.propertyListing.createListing = createListing;
-
 });

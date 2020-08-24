@@ -70,8 +70,9 @@ $(() => {
   });
   $("header").on("click", '.my_listing_button', function() {
     propertyListings.clearListings();
-    getAllListings(`owner_id=${currentUser.id}`)
+    getAllListings(`user_id=${currentUser.id}`)
       .then(function(json) {
+        console.log(json);
         propertyListings.addProperties(json.properties);
         views_manager.show('listings');
     });

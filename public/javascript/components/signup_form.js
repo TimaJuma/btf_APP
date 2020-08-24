@@ -38,6 +38,7 @@ $(() => {
     signUp(data)
       .then(getMyDetails)
       .then((json) => {
+        console.log(json.user);
         header.update(json.user);
         views_manager.show('listings');
       });
