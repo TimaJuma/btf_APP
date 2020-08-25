@@ -4,68 +4,59 @@ $(() => {
 
   const $newPropertyForm = $(`
   <form action="/api/items" method="post" id="new-property-form" class="new-property-form">
-      <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__title">Title</label>
-        <input type="text" name="title" placeholder="Title" id="new-property-form__title">
-      </div>
+  <div class="new-property-form__field-wrapper">
+    <label for="new-property-form__title">Title</label>
+    <input type="text" name="title" placeholder="Title" id="new-property-form__title">
+  </div>
+  
+  <div class="new-property-form__field-wrapper">
+    <label for="new-property-form__description">Description</label>
+    <textarea placeholder="Description" name="description" id="property-form__description" cols="30" rows="10"></textarea>
+  </div>
+  <!-- <div class="new-property-form__field-wrapper">
+      <label for="new-property-form__type">Type</label>
+      <select id="new-property-form__type" name="type">
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+      </select>
+    </div> -->
+  <div class="new-property-form__field-wrapper">
+    <label for="new-property-form__cost">Price</label>
+    <input placeholder="Price" type="number"  step="0.01" min="0" name="price" id="new-property-form__cost">
+  </div>
+  <div class="new-property-form__field-wrapper">
+    <label for="new-property-form__thumbnail">Thumbnail Image</label>
+    <input placeholder="Thumbnail Image" type="text" id="new-property-form__thumbnail">
+  </div>
+  <div class="new-property-form__field-wrapper">
+    <label for="new-property-form__cover">Cover Image</label>
+    <input placeholder="Cover Image" type="text"  id="new-property-form__cover">
+  </div>
+  <hr>
+    <div class="new-property-form__field-wrapper">
+      <label for="new-property-form__country">Country</label>
+      <select id="new-property-form__country" name="country" data-country-selected="Canada">
+          <option value="USA">United States</option>
+          <option value="Canada">Canada</option>
+      </select>
+    </div>
+    <div id="new-property-form__locality-fields">
       
       <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__description">Description</label>
-        <textarea placeholder="Description" name="description" id="property-form__description" cols="30" rows="10"></textarea>
+        <label for="new-property-form__city">City</label>
+        <input placeholder="City" type="text" name="city" id="new-property-form__city" />
       </div>
-
       <!-- <div class="new-property-form__field-wrapper">
-          <label for="new-property-form__type">Type</label>
-          <select id="new-property-form__type" name="type">
-              <option value="house">House</option>
-              <option value="apartment">Apartment</option>
-          </select>
-        </div> -->
-
-
-      <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__cost">Price</label>
-        <input placeholder="Price" type="number"  step="0.01" min="0" name="price" id="new-property-form__cost">
-      </div>
-
-      <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__thumbnail">Thumbnail Image</label>
-        <input placeholder="Thumbnail Image" type="text" id="new-property-form__thumbnail">
-      </div>
-
-      <div class="new-property-form__field-wrapper">
-        <label for="new-property-form__cover">Cover Image</label>
-        <input placeholder="Cover Image" type="text"  id="new-property-form__cover">
-      </div>
-
-      <hr>
-
-
-        <div class="new-property-form__field-wrapper">
-          <label for="new-property-form__country">Country</label>
-          <select id="new-property-form__country" name="country" data-country-selected="Canada">
-              <option value="USA">United States</option>
-              <option value="Canada">Canada</option>
-          </select>
-        </div>
-        <div id="new-property-form__locality-fields">
-          
-          <div class="new-property-form__field-wrapper">
-            <label for="new-property-form__city">City</label>
-            <input placeholder="City" type="text" name="city" id="new-property-form__city" />
-          </div>
-          <!-- <div class="new-property-form__field-wrapper">
-            <label for="new-property-form__state">Administrative Area</label>
-            <input placeholder="Administrative Area" type="text" name="province" id="new-property-form__state" />
-          </div> --> 
-        </div>
-
-        <div class="new-property-form__field-wrapper">
-            <button>Create</button>
-            <a id="property-form__cancel" href="#">Cancel</a>
-        </div>
-        
-    </form>
+        <label for="new-property-form__state">Administrative Area</label>
+        <input placeholder="Administrative Area" type="text" name="province" id="new-property-form__state" />
+      </div> --> 
+    </div>
+    <div class="new-property-form__field-wrapper">
+        <button>Create</button>
+        <a id="property-form__cancel" href="#">Cancel</a>
+    </div>
+    
+</form>
   `);
 
   window.$newPropertyForm = $newPropertyForm;
