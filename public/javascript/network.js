@@ -46,6 +46,22 @@ function getAllReservations() {
   });
 }
 
+function addtoFavs(data) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/favorites",
+    data,
+  });
+}
+
+// function removeFromFavs(data) {
+//   return $.ajax({
+//     method: "POST",
+//     url: "/api/favorites",
+//     data,
+//   });
+// }
+
 const submitProperty = function(data) {
   return $.ajax({
     method: "POST",

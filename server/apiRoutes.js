@@ -38,5 +38,11 @@ module.exports = function(router, database) {
       });
   });
 
+
+  router.post('/favorites', (req,res) => {
+    console.log(req.body);
+    database.addToFavorites(req.body);
+  })
+
   return router;
 }

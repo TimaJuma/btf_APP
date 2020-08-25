@@ -84,17 +84,14 @@ exports.addUser = addUser;
 /// RESERVATIONS ===============================================================================
 
 // Get all reservations for a single user.
-const getAllReservations = (guest_id, limit = 10) => {
+const getAllReservations = (guest_id) => {
   return pool.query(`
-    SELECT user_id, item_id
-    FROM favoruites
-    JOIN properties ON reservations.property_id = properties.id
-    JOIN property_reviews ON properties.id = property_reviews.property_id 
-    WHERE reservations.guest_id = $1 AND end_date < now()::date
-    GROUP BY properties.id, reservations.id
-    ORDER BY start_date
-    LIMIT $2;
-    `, [guest_id, limit])
+  SELECT items.*, name, email, tel
+  FROM favourites
+  JOIN items ON items.id = favourites.item_id 
+  JOIN users ON users.id = favourites.user_id
+  WHERE users.id = $1;
+    `, [guest_id])
     .then(res => {
       return res.rows;
     })
@@ -104,6 +101,42 @@ const getAllReservations = (guest_id, limit = 10) => {
     });
 };
 exports.getAllReservations = getAllReservations;
+
+
+// const addToFavorites = (liked) => {
+//   console.log('Adding to FAVS')
+//   return pool.query(`
+//     SELECT *
+//     FROM favourites
+//     WHERE item_id = $1 AND user_id = $2;
+//     `, [liked.item_id, liked.user_id])
+//     .then(res => {
+//       if (res.rows) {
+//         pool.query(`DELETE FROM favourites WHERE user_id =$1 AND item_id =$2;`, [liked.item_id, liked.user_id])
+//       }
+//       else {
+//         pool.query(`INSERT INTO favourites(user_id, item_id) VALUES($1, $2) RETURNING *`, [liked.item_id, liked.user_id])
+//       }
+//     })
+//     .catch(err => {
+//       console.error('query error', err.stack);
+//       return null;
+//     });
+// };
+// exports.addToFavorites = addToFavorites;
+
+
+const addToFavorites = (liked) => {
+  console.log('Adding to FAVS')
+  return pool.query(`INSERT INTO favourites(user_id, item_id) VALUES($1, $2) RETURNING *`, [liked.user_id, liked.item_id])
+    .then(res => res.rows[0])
+    .catch(err => {
+      console.error('query error', err.stack);
+      return null;
+    });
+};
+exports.addToFavorites = addToFavorites;
+
 
 
 
@@ -231,4 +264,8 @@ const addProperty = function(property) {
   })
   .catch(err => console.err('Query error', err));
 }
+
+
+
+
 exports.addProperty = addProperty;
