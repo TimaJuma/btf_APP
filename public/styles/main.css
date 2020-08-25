@@ -154,11 +154,11 @@ background-color:lime;
 }
 
 .flip-card-back {
+  font-family: 'Alata', sans-serif;
   border-radius: 15px;
   background-color: #20253a;
-  font-style: italic;
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   align-items:center;
