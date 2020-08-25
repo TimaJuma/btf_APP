@@ -2,7 +2,7 @@ module.exports = function(router, database) {
 
   router.get('/items', (req, res) => {
     console.log('req.query: ',req.query)
-    database.getAllProperties(req.query, 20)
+    database.getAllProperties(req.query, 1000000)
     .then(properties => res.send({properties}))
     .catch(e => {
       console.error(e);

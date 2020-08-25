@@ -2,8 +2,8 @@ $(() => {
   
 
   const $userContainer = $(`
-  <div>
-  User container
+  <div class="user_container">
+  
   </div>
   `);
 
@@ -11,11 +11,11 @@ $(() => {
 
     function userInfo(user){
      let html =  `
-    <h3>Information about ${user.name}</h3>
-    <ul>
-    <li>telephone: ${user.tel}</li>
-    <li>email: ${user.email}</li>
-    </ul>
+   <div class="user_info_box">
+   <h3>My account:  <span class="bold_name">${user.name}</span></h3>
+   telephone: ${user.tel} <br>
+   email: ${user.email}
+   <div>
     `
   $userContainer.append(html);
   };
