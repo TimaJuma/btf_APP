@@ -72,8 +72,8 @@ $(() => {
     propertyListings.clearListings();
     getAllListings(`user_id=${currentUser.id}`)
       .then(function(json) {
-        console.log(json);
-        propertyListings.addProperties(json.properties);
+        const filteredJson = json.properties.filter(obj => obj.user_id === currentUser.id);
+        propertyListings.addProperties(filteredJson);
         views_manager.show('listings');
     });
   });
