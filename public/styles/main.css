@@ -66,10 +66,11 @@ body {
       padding: 0; }
 
       .card__heading {
-        font-size: 1.8rem;
-        font-weight: 300;
+        font-size: 1.6rem;
+        font-weight: 900;
         text-transform: uppercase;
         color: #fff;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.637);
         width: 100%; }
 
       .card__heading-span {
@@ -114,6 +115,7 @@ background-color:lime;
 
 
   .flip-card {
+   position: relative;
   background-color: transparent;
   margin: 40px 20px;
   width: 300px;
@@ -147,7 +149,7 @@ background-color:lime;
 
 .flip-card-front {
   border-radius: 15px;
-  background-image: linear-gradient(to bottom right, rgba(85, 88, 218, 0.9), rgba(95, 209, 249, 0.9));
+  background-image: linear-gradient(to bottom right, rgba(194, 194, 194, 0.7), rgba(162, 171, 255, 0.514));
   color: black;
 }
 
@@ -161,6 +163,23 @@ background-color:lime;
   justify-content: center;
   align-items:center;
   transform: rotateY(180deg);
+}
+
+.city{
+  color:#20253a;
+  font-style: italic;
+  font-size: 14px;
+}
+.city-flex{
+  width: 98%;
+  text-align: right;
+  position: absolute;
+  bottom:5px;
+  right:10px;
+}
+.post_description{
+font-size: 20px;
+font-family: 'Open Sans Condensed', sans-serif;
 }
 
 @media screen and (max-width: 400px) {

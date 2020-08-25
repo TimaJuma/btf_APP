@@ -5,21 +5,21 @@ $(() => {
         <p>Sign Up</p>
 
         <div class="sign-up-form__field-wrapper">
-            <input type="text" name="name" placeholder="Username" required>
+            <input type="text" name="name" placeholder="Username" required autocomplete="off">
           </div>
 
         <div class="sign-up-form__field-wrapper">
-          <input type="email" name="email" placeholder="Email">
+          <input type="email" name="email" placeholder="Email" required autocomplete="off">
         </div>
 
         <div class="sign-up-form__field-wrapper">
         <input type="tel" id="tel" name="tel"
         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        placeholder="Tel: 123-456-7890">
+        placeholder="Tel: 123-456-7890" required autocomplete="off">
         </div>
   
         <div class="sign-up-form__field-wrapper">
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required autocomplete="off">
           </div>
   
         <div class="sign-up-form__field-wrapper">
