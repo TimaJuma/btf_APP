@@ -8,11 +8,17 @@ $(() => {
     } else {
       btn_class = 'like-btn';
     }
+
+    // create image URL
+    let post_image;
+    if (item.img_url) post_image = item.img_url;
+    else post_image = "https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg"
+
     return `
     <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-    <img class="card__picture card__picture--1" src="https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg" alt="cat">
+    <img class="card__picture card__picture--1" src="${post_image}" alt="cat">
     <h4 class="card__heading">  <span class="card__heading-span">${item.title}</span> </h4>
           <div class="post_description">
             ${item.description}
