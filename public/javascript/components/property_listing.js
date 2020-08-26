@@ -16,11 +16,18 @@ $(() => {
     <div class="flip-card-back">
     <footer class="property-listing__footer">
     <div class="property-listing__price">$ ${item.price / 100.0} CAD</div>
-    <div><button class="like-btn" id="${item.id}" value="${item.id}" data-user_id="${item.id}">LIKE</button></div>
+    
+    <div class="like_more">
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">More info...</button>
+    <button class="like-btn" id="${item.id}" value="${item.id}" data-user_id="${item.id}"><span class="heart">&#10084;</span></button>
+   
+    </div>
   </footer>
     </div>
   </div>
 </div>
+
       `;
   }
 

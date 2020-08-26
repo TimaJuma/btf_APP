@@ -208,6 +208,10 @@ background-color:lime;
   transform: rotateY(180deg);
 }
 
+.heart{
+  font-size: 50px;
+}
+
 .city{
   color:#20253a;
   font-style: italic;
@@ -223,6 +227,159 @@ background-color:lime;
 .post_description{
 font-size: 20px;
 font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* MODAL */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
+}
+
+.like_more{
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#myBtn{
+  z-index: 1000;
+  width: 160px;
+  color:#fff;
+  height: 60px;
+  font-size: 24px;
+  border:2px solid #fff;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .1s;
+}
+#myBtn:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  height: 90%;
+}
+
+
+.like-btn{
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 60px;
+  color:#fff;
+  height: 60px;
+  font-size: 20px;
+  border:2px solid #fff;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .2s;
+}
+.like-btn:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+.like-btn:focus{
+ outline:none;
+ background: #fff;
+ color:red;
+}
+
+.active-like-btn{
+background: #fff;
+ color:red;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: -40px;
+  top: -50px;
+  color: white;
+  font-size: 60px;
+}
+
+.close:hover,
+.close:focus{
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.more_info_box{
+  display: flex;
+}
+.more_info_box-left{
+  margin-right: 20px;
+  width: 40vw;
+  height:100vh;
+}
+
+.more_info_box-right{
+  font-size: 20px;
+}
+
+.more_info-img{
+  border-radius:10px;
+  max-width: 100%;
+  max-height:100%;
+  display: block;
+}
+
+.more_info-header{
+  font-size: 40px;
+  padding: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.698);
+}
+
+.more_info-heart{
+  font-size: 60px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 60px;
+  background-color: #000;
+  color:#000;
+  height: 60px;
+  font-size: 20px;
+  border:2px solid #000;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .2s;
+}
+.more_info-heart:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+.more_info-heart:focus{
+ outline:none;
+ background: #fff;
+ color:red;
 }
 
 @media screen and (max-width: 400px) {
@@ -241,7 +398,6 @@ font-family: 'Open Sans Condensed', sans-serif;
   .search-property-form label, .login-form label, .new-property-form label, .sign-up-form label {
     display: none; }
   .search-property-form textarea, .search-property-form select, .search-property-form input, .search-property-form label, .login-form textarea, .login-form select, .login-form input, .login-form label, .new-property-form textarea, .new-property-form select, .new-property-form input, .new-property-form label, .sign-up-form textarea, .sign-up-form select, .sign-up-form input, .sign-up-form label {
-    margin: 5px 5px;
     width: 100%; }
 
 .page-header__user-links ul {
