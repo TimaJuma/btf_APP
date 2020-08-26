@@ -6,29 +6,26 @@ $(() => {
   
     window.$moreContainer = $moreContainer;
   
-      function moreInfo(user){
+      function moreInfo(user, item){
        let html =  `
        <div class="more_info_box">
     <div class="more_info_box-left">
     <img class="more_info-img" src="https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg" alt="cat">
     <div class="dark-header"> <button class="like-btn" id="${user.id}" value="${user.id}" data-user_id="${user.id}"><span class="heart">&#9829;</span></button></div>
-    <div class="more_info-price">Price: $ 100 CAD </div>
-    <div class="more_info-city">City: Vancouver </div>
+    <div class="more_info-price">Price: $ ${item.price / 100.0}</div>
+    <div class="more_info-city">City: ${item.city} </div>
 
    <div class="owner">
-   <h5>Owner: ${user.name}</h5>
+   <h5>Owner: ${item.name}</h5>
    <ul>
-   <email:>telephone: ${user.tel}  &#9830; email: ${user.email} </li>
+   <email:>telephone: ${item.tel}  &#9830; email: ${item.email} </li>
    </ul>
    </div>
     </div>
     
     <div class="more_info_box-right">
-   <h2 class="more_info-header">Table </h2>
-     <div class="more_info-desc">       Such a wonderful table to buy! Used, but looks like new! The price is really low right now.Such a wonderful table to buy! Used, but looks like new! The price is really low right now. 
-     Such a wonderful table to buy! Used, but looks like new! The price is really low right now. 
-     Such a wonderful table to buy! Used, but looks like new! The price is really low right now.Such a wonderful table to buy! Used, but looks like new! The price is really low right now. 
-     Such a wonderful table to buy! Used, but looks like new! The price is really low right now.</div>
+   <h2 class="more_info-header">${item.title}</h2>
+     <div class="more_info-desc">${item.description}</div>
     
 
      
@@ -83,10 +80,16 @@ $(() => {
         $moreContainer.empty();
       }
   
-      function addMoreInfo() {
+      function addMoreInfo(item_id) {
         clearUser();
-        getMyDetails().then((data) => {
-          moreInfo(data.user);
+        Promise.all([getMyDetails(), getAllListings()])
+        .then((data) => {
+          let itemData;
+          for (const item of data[1].properties){
+            if (item.id == item_id) itemData = item
+          }
+          console.log('ItemDAta', itemData)
+          moreInfo(data[0].user, itemData);
         });
       }
       window.addMoreInfo = addMoreInfo;

@@ -160,8 +160,9 @@ const getAllProperties = function(options, limit = 10) {
   console.log('getAllProperties is activated');
   const queryParams = [];
   let queryString = `
-  SELECT *
+  SELECT items.*, name, tel, email
   FROM items
+  JOIN users ON user_id = users.id
   `;
 
   if (options.title) {

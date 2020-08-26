@@ -1,7 +1,7 @@
 $(() => {
-    console.log('content loaded');
     $(document).on('click', '#myBtn', function() {
-      views_manager.show('moreInfo');
+      const button = $(this);
+      views_manager.show('moreInfo', button.val());
       $('#myModal').css({"display" : "block"});
     })
   

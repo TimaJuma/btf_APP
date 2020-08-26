@@ -4,7 +4,7 @@ $(() => {
 
   window.views_manager = {};
 
-  window.views_manager.show = function(item) {
+  window.views_manager.show = function(item, item_id) {
     $newPropertyForm.detach();
     $searchPropertyForm.detach();
     $logInForm.detach();
@@ -32,7 +32,7 @@ $(() => {
         $searchPropertyForm.appendTo(middle);
         break;
       case 'moreInfo':
-          addMoreInfo();
+        addMoreInfo(item_id);
         const $modalContent = $('.modal-content')
         $moreContainer.appendTo($modalContent);
         break;
