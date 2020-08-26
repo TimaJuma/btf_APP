@@ -137,7 +137,16 @@ const addToFavorites = (liked) => {
 };
 exports.addToFavorites = addToFavorites;
 
-
+const removeFavs = (liked) => {
+  console.log('Remove from FAVS')
+  return pool.query(`DELETE FROM favourites WHERE user_id =$1 AND item_id =$2;`, [liked.user_id, liked.item_id])
+    .then(res => res.rows[0])
+    .catch(err => {
+      console.error('query error', err.stack);
+      return null;
+    });
+};
+exports.removeFavs = removeFavs;
 
 
 /// PROPERTIES

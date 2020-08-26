@@ -44,5 +44,10 @@ module.exports = function(router, database) {
     database.addToFavorites(req.body);
   })
 
+  router.post('/favorites/delete', (req,res) => {
+    console.log(req.body);
+    database.removeFavs(req.body);
+  })
+
   return router;
 }

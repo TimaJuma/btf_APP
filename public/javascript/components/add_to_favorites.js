@@ -33,7 +33,7 @@ $(() => {
       for (const post of favourites.reservations){
         if (post.id == button.val()) {
           console.log('Already exists in favs')
-          addtoFavs({post_id: Number(post.id), user_id: 2})          
+          removeFromFavs({item_id: Number(post.id), user_id: 2})          
           return;
         }        
       }
