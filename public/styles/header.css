@@ -24,7 +24,8 @@
   border: none;
   background-color: #f2f2f2;
   padding: .5rem;
-  height: auto;
+  height: 2.5rem;
+  margin-right: .5rem;
 }
 
 .input-group-text {
@@ -48,8 +49,8 @@ form:hover + #advanced-search-button {
 }
 
 
-.input:focus {
-  outline: none;
+input:focus {
+  outline: none !important; 
   border: none;
   background-color: #f2f2f2;
 }
@@ -59,6 +60,7 @@ form:hover + #advanced-search-button {
   font-weight: 900;
   border-radius: 20px;
   color: #f2f3f4;
+  height: 2.5rem;
 }
 
 #header-img {
