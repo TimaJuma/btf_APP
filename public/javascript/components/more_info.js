@@ -61,22 +61,22 @@ $(() => {
     for (message of messages) {
       if (message.sender_id == user.id) {
         const div = document.createElement('div')
+        div.classList.add("msg-from")
         let rightMsg = 
         `
-        <div class="msg-from">
+
         <div class="msg-from-text">${message.message}</div>
-        </div>   
+
         `;
       div.innerHTML = rightMsg;
       msgBox.append(div)
       }
       else {
         const div = document.createElement('div')
+        div.classList.add("msg-to")
         let leftMsg = 
         `
-          <div class="msg-to">
             <div class="msg-to-text">${message.message}</div>
-          </div>
         `;
         div.innerHTML = leftMsg;
         msgBox.append(div);

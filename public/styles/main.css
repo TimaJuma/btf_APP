@@ -385,8 +385,10 @@ background: #fff;
 
 .msg-itself{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   border-radius: 10px;
+  height: 100%;
 }
 .owner{
   font-family: 'Alata', sans-serif;
@@ -437,8 +439,7 @@ border:none;
 .msg-to, .msg-from{
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  width: 50%;
+  padding: 5px;
 }
 
 .msg-from-text,
@@ -449,6 +450,13 @@ border:none;
   height: auto;
   border-radius:20px;
   padding: 8px;
+}
+
+.msg-to{
+  align-self: flex-start;
+}
+.msg-from{
+  align-self: flex-end;
 }
 
 .msg-to-text{
