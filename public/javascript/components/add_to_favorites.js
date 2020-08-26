@@ -26,18 +26,24 @@ $(() => {
   console.log('content loaded');
   $(document).on('click', '.like-btn', function() {
     const button = $(this);
-
+    if (button.hasClass('active-like-button')) {
+      button.removeClass("active-like-button")
+      console.log('Removed Class')
+    } else {
+      button.addClass("active-like-button")
+      console.log('Added Class')
+    }
     console.log('this button pressed', button.val());
     getAllReservations()
     .then(favourites => {
       for (const post of favourites.reservations){
         if (post.id == button.val()) {
           console.log('Already exists in favs')
-          removeFromFavs({item_id: Number(post.id), user_id: 2})          
+          removeFromFavs({item_id: Number(post.id), user_id: 1})          
           return;
         }        
       }
-      addtoFavs({item_id: Number(button.val()), user_id: 2}) 
+      addtoFavs({item_id: Number(button.val()), user_id: 1}) 
       
     })
     

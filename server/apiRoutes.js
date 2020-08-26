@@ -41,11 +41,13 @@ module.exports = function(router, database) {
 
   router.post('/favorites', (req,res) => {
     console.log(req.body);
+    req.body.user_id = req.session.userId;
     database.addToFavorites(req.body);
   })
 
   router.post('/favorites/delete', (req,res) => {
     console.log(req.body);
+    req.body.user_id = req.session.userId;
     database.removeFavs(req.body);
   })
 
