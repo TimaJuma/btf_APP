@@ -209,6 +209,10 @@ background-color:lime;
   transform: rotateY(180deg);
 }
 
+.heart{
+  font-size: 50px;
+}
+
 .city{
   color:#20253a;
   font-style: italic;
@@ -224,6 +228,108 @@ background-color:lime;
 .post_description{
 font-size: 20px;
 font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* MODAL */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.705); /* Black w/ opacity */
+  transition: all .4s;
+}
+
+.like_more{
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#myBtn{
+  z-index: 1000;
+  width: 160px;
+  color:#fff;
+  height: 60px;
+  font-size: 24px;
+  border:2px solid #fff;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .1s;
+}
+#myBtn:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+}
+
+
+.like-btn{
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 60px;
+  color:#fff;
+  height: 60px;
+  font-size: 20px;
+  border:2px solid #fff;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .2s;
+}
+.like-btn:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+.like-btn:focus{
+ outline:none;
+ background: #fff;
+ color:red;
+}
+
+.red-like-btn{
+background: #fff;
+ color:red;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  right: -40px;
+  top: -50px;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  transition: all .4s;
+}
+
+.close:hover,
+.close:focus{
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transform: rotateY(180deg);
 }
 
 @media screen and (max-width: 400px) {
