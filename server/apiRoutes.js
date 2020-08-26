@@ -24,6 +24,22 @@ module.exports = function(router, database) {
     });
   });
 
+
+  router.get('/messages', (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+      res.error("💩");
+      return;
+    }
+    database.getAllMsg(userId)
+    .then(messages => res.send({messages}))
+    .catch(e => {
+      console.error(e);
+      res.send(e)
+    });
+  });
+
+
   router.post('/items', (req, res) => {
     console.log('req:', req);
     console.log('res:', res);
@@ -37,6 +53,8 @@ module.exports = function(router, database) {
         res.send(e)
       });
   });
+
+  
 
 
   router.post('/favorites', (req,res) => {

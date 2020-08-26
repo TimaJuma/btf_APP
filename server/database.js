@@ -149,7 +149,7 @@ const removeFavs = (liked) => {
 exports.removeFavs = removeFavs;
 
 
-/// PROPERTIES
+/// ITEMS
 
 // Get all properties.
 
@@ -275,6 +275,24 @@ const addProperty = function(property) {
 }
 
 
+
+/// MESSAGES ======================================================
+const getAllMsg = (user_id) => {
+  return pool.query(`
+    SELECT *
+    FROM messages
+    WHERE sender_id = $1 OR reciever_id = $2
+    ORDER BY message_date DESC;
+    `, [user_id, user_id])
+    .then(res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.error('query error', err.stack);
+      return null;
+    });
+};
+exports.getAllMsg = getAllMsg;
 
 
 exports.addProperty = addProperty;
