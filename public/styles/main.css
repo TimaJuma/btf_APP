@@ -2,7 +2,7 @@ body {
   padding-top: 70px;
 }
 
-.navbar {
+/* .navbar {
   background-color: #20253a;
   position: fixed;
   top: 0;
@@ -24,10 +24,9 @@ body {
 }
 
 .nav-link {
-  /* font-family: ; */
   color: #F2F3F4;
   cursor: pointer;
-}
+} */
 
 .property-listings {
   width: 100%;
