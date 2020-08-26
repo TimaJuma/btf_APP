@@ -1,6 +1,7 @@
 $(() => {
     console.log('content loaded');
     $(document).on('click', '#myBtn', function() {
+      views_manager.show('moreInfo');
       $('#myModal').css({"display" : "block"});
     })
   
@@ -17,9 +18,10 @@ $(() => {
     }
     
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    // window.onclick = function(event) {
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
+    // }
 
+  

@@ -242,8 +242,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.705); /* Black w/ opacity */
-  transition: all .4s;
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
 }
 
 .like_more{
@@ -278,8 +277,8 @@ font-family: 'Open Sans Condensed', sans-serif;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
 }
 
 
@@ -309,10 +308,11 @@ font-family: 'Open Sans Condensed', sans-serif;
  color:red;
 }
 
-.red-like-btn{
+.active-like-btn{
 background: #fff;
  color:red;
 }
+
 /* The Close Button */
 .close {
   position: absolute;
@@ -320,8 +320,6 @@ background: #fff;
   top: -50px;
   color: white;
   font-size: 60px;
-  font-weight: bold;
-  transition: all .4s;
 }
 
 .close:hover,
@@ -329,7 +327,60 @@ background: #fff;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-  transform: rotateY(180deg);
+}
+
+.more_info_box{
+  display: flex;
+}
+.more_info_box-left{
+  margin-right: 20px;
+  width: 40vw;
+  height:100vh;
+}
+
+.more_info_box-right{
+  font-size: 20px;
+}
+
+.more_info-img{
+  border-radius:10px;
+  max-width: 100%;
+  max-height:100%;
+  display: block;
+}
+
+.more_info-header{
+  font-size: 40px;
+  padding: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.698);
+}
+
+.more_info-heart{
+  font-size: 60px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 60px;
+  background-color: #000;
+  color:#000;
+  height: 60px;
+  font-size: 20px;
+  border:2px solid #000;
+  background: none;
+  border-radius:10px;
+  outline: none;
+  transition: all .2s;
+}
+.more_info-heart:hover{
+  color:#20253a;
+  background: #fff;
+  border:2px solid transparent;
+}
+.more_info-heart:focus{
+ outline:none;
+ background: #fff;
+ color:red;
 }
 
 @media screen and (max-width: 400px) {
@@ -348,7 +399,6 @@ background: #fff;
   .search-property-form label, .login-form label, .new-property-form label, .sign-up-form label {
     display: none; }
   .search-property-form textarea, .search-property-form select, .search-property-form input, .search-property-form label, .login-form textarea, .login-form select, .login-form input, .login-form label, .new-property-form textarea, .new-property-form select, .new-property-form input, .new-property-form label, .sign-up-form textarea, .sign-up-form select, .sign-up-form input, .sign-up-form label {
-    margin: 5px 5px;
     width: 100%; }
 
 .page-header__user-links ul {

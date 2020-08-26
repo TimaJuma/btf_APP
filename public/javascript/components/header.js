@@ -100,6 +100,10 @@ $(() => {
     views_manager.show('logIn');
   });
 
+  $("header").on('click', '.login_button', () => {
+    views_manager.show('logIn');
+  });
+  
   $("header").on('click', '.user_info', () => {
     views_manager.show('userInfo');
   });
