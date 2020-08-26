@@ -160,9 +160,10 @@ const getAllProperties = function(options, limit = 10) {
   console.log('getAllProperties is activated');
   const queryParams = [];
   let queryString = `
-  SELECT items.*, name, tel, email
+  SELECT items.*, name, tel, email, img_url
   FROM items
   JOIN users ON user_id = users.id
+  LEFT JOIN item_images ON item_id = items.id
   `;
 
   if (options.title) {
