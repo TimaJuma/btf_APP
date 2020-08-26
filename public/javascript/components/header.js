@@ -11,13 +11,13 @@ $(() => {
     if (!user) {
       userLinks = `
 
-      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-dark navbar-expand-lg">
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-expand-lg">
       <a class="navbar-brand" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
           <li class="home nav-item nav-link" href="#"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></li>
           <li class="search_button nav-item nav-link"><i class="fa fa-search"></i> Search</li>
           <li class="login_button nav-item nav-link"><i class="fas fa-sign-in-alt"></i> Log In</li>
@@ -29,13 +29,13 @@ $(() => {
     } else {
       userLinks = `
 
-      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-dark navbar-expand-lg">
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-expand-lg">
       <a class="navbar-brand" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav navbar-right">
+        <div class="navbar-nav ml-auto">
           <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
           <li class="search_button nav-item nav-link">Search</li>
           <li class="user_info nav-item nav-link">${user.name}</li>
