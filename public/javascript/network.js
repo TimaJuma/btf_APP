@@ -62,6 +62,13 @@ function removeFromFavs(data) {
   });
 }
 
+function getAllMessages() {
+  let url = "/api/messages";
+  return $.ajax({
+    url,
+  });
+}
+
 const submitProperty = function(data) {
   return $.ajax({
     method: "POST",
