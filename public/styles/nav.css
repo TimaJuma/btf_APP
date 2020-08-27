@@ -28,6 +28,21 @@
 
 .nav-link {
   font-family: 'Poppins';
+  font-weight: 600;
   color: #F2F3F4;
   cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: #20253a;
+}
+
+.dropdown-item {
+  font-family: 'Poppins';
+  color: #F2F3F4;
+}
+
+.dropdown-item:hover {
+  background-color: #20253a;
+  color: #fff;
 }
