@@ -11,6 +11,7 @@ $(() => {
     $userContainer.detach();
     $signUpForm.detach();
     $moreContainer.detach();
+    $home_search.detach();
 
     switch (item) {
       case 'listings':

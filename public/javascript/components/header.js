@@ -12,7 +12,8 @@ $(() => {
       userLinks = `
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
-      <a class="home navbar-brand">BTF Sales</a>
+      <a class="navbar-brand" id="home-page" href="#">BTF Sales</a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="custom-toggler navbar-toggler-icon"></span>
       </button>
@@ -39,7 +40,8 @@ $(() => {
       userLinks = `
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
-      <a class="home navbar-brand">BTF Sales</a>
+
+      <a class="navbar-brand" id="home-page" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -77,12 +79,22 @@ $(() => {
     $pageHeader.append(userLinks);
   }
 
+
   window.header.update = updateHeader;
+
+
 
   getMyDetails()
     .then(function( json ) {
     updateHeader(json.user);
+  })
+  .then(res => {
+    const $top = $('#top');
+    const $home_search = window.$home_search;
+    $home_search.appendTo($top);
   });
+  
+   // ============ MY FAVS in HEADER ============
 
   $("header").on("click", '.my_reservations_button', function() {
     propertyListings.clearListings();
@@ -94,24 +106,30 @@ $(() => {
       .catch(error => console.error(error));
   });
 
-  
+  // ============ MY ADS in HEADER ============
+
   $("header").on("click", '.my_listing_button', function() {
     propertyListings.clearListings();
     getAllListings(`user_id=${currentUser.id}`)
       .then(function(json) {
         console.log(json);
         const filteredJson = json.properties.filter(obj => obj.user_id === currentUser.id);
+        console.log('filteredJson:', filteredJson);
         propertyListings.addProperties(filteredJson);
         views_manager.show('listings');
     });
   });
 
-  $("header").on("click", '.home', function() {
+  $("header").on("click", '#home-page', function() {
     propertyListings.clearListings();
+    const $top = $('#top');
+    const $home_search = window.$home_search;
+    // $home_search.appendTo($top);
     getAllListings()
       .then(function(json) {
         propertyListings.addProperties(json.properties);
         views_manager.show('listings');
+        $home_search.appendTo($top);
     });
   });
 
