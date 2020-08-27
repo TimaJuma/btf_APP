@@ -54,7 +54,7 @@ function addtoFavs(data) {
   });
 }
 
-function addMsg(data) {
+function addNewMessage(data) {
   return $.ajax({
     method: "POST",
     url: "/api/messages",

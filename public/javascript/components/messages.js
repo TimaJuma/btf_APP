@@ -16,13 +16,38 @@ $(() => {
   $(document).on('click', '.btn-send', function(event) {
     event.preventDefault();
     const button = $(this);
-    let text_msg = $('.send_message')
+    let text_msg = $('.send_message');
+    const msgBox = document.querySelector('.msg-itself');
     console.log('btn-send button pressed', button.val(), text_msg.val(), button.data().item);
  
-  addMsg({text_body: text_msg.val(), reciever_id: button.val(), item_id: button.data().item}) 
+  addNewMessage({text_body: text_msg.val(), reciever_id: button.val(), item_id: button.data().item}) 
+  .then(getAllMessages)
   .then(getAllMessages)
   .then(res => { 
-    console.log('res messages ALL:' , res.messages)
+    console.log('res messages ALL:' , res.messages[0])
+
+      if (res.messages[0].reciever_id == button.val()) {
+        const div = document.createElement('div')
+        div.classList.add("msg-to")
+        let rightMsg = 
+        `
+
+        <div class="msg-to-text">${res.messages[0].message}</div>
+
+        `;
+      div.innerHTML = rightMsg;
+      msgBox.prepend(div)
+      }
+      else {
+        const div = document.createElement('div')
+        div.classList.add("msg-from")
+        let leftMsg = 
+        `
+            <div class="msg-from-text">${res.messages[0].message}</div>
+        `;
+        div.innerHTML = leftMsg;
+        msgBox.prepend(div);
+      }
   })
 
   text_msg.val("");
