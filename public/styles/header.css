@@ -1,5 +1,11 @@
 .homepage-header {
   height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
 }
 
 .header-search-area, .header-img-area {
@@ -50,19 +56,19 @@ form:hover + #advanced-search-button {
 }
 
 
-input:focus {
-  outline: none !important; 
-  border: none;
+.input:focus {
   background-color: #f2f2f2;
+  box-shadow: none;
 }
 
-.search-btn {
+.btn {
   background-color: #6c63ff; 
   font-weight: 900;
   border-radius: 20px;
   color: #f2f3f4;
   height: 2.5rem;
 }
+
 
 #header-img {
   height: 50vh;
