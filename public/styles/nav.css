@@ -71,6 +71,8 @@ footer {
 
 footer svg {
   height: 2.5rem;
+  position: relative;
+  bottom: 7px;
 }
 
 footer a {
@@ -79,10 +81,18 @@ footer a {
   padding: 1rem;
 }
 
+footer a span {
+  color: #6C63FF;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
 footer .fa-github {
   font-size: 1.5rem;
 }
 
 footer a:hover, footer .fa-github:hover {
-  color: #6C63FF
-}
+  transition: ease-in-out .6s;
+  color: #6C63FF;
+  text-decoration: none;
+}s
