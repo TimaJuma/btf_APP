@@ -11,17 +11,26 @@ $(() => {
     if (!user) {
       userLinks = `
 
-      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-expand-lg">
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
       <a class="navbar-brand" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto">
-          <li class="home nav-item nav-link" href="#"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></li>
-          <li class="search_button nav-item nav-link"><i class="fa fa-search"></i> Search</li>
-          <li class="login_button nav-item nav-link"><i class="fas fa-sign-in-alt"></i> Log In</li>
-          <li class="sign-up_button nav-item nav-link"><i class="fa fa-user-plus"></i> Sign Up</li>
+          <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
+          <li class="search_button nav-item nav-link">Search</li>
+          <li class="login_button nav-item nav-link">Log In</li>
+          <li class="sign-up_button nav-item nav-link">Sign Up</li>
+          <form class="form-inline my-auto">
+          <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input type="text" class="input form-control" placeholder="Search ads..." aria-label="Search">
+        </div>
+          </form>
         </ul>
       </div>
     </nav>
@@ -29,20 +38,36 @@ $(() => {
     } else {
       userLinks = `
 
-      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-expand-lg">
+      <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
       <a class="navbar-brand" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
-          <li class="search_button nav-item nav-link">Search</li>
-          <li class="user_info nav-item nav-link">${user.name}</li>
-          <li class="create_listing_button nav-item nav-link">Add post</li>
-          <li class="my_listing_button nav-item nav-link">My posts</li>
-          <li class="my_reservations_button nav-item nav-link">My favourites</li>
-          <li class="logout_button nav-item nav-link">Log Out</li>
+
+          <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ${user.name}
+          </a>
+          <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
+            <a class="create_listing_button dropdown-item" href="#">Create ad</a>
+            <a class="my_listing_button dropdown-item " href="#">My ads</a>
+            <a class="my_reservations_button dropdown-item" href="#">Favourites</a>
+            <a class="logout_button dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+
+        <form class="form-inline my-auto">
+        <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+        </div>
+        <input type="text" class="input form-control" placeholder="Search ads..." aria-label="Search">
+      </div>
+        </form>
+
         </div>
       </div>
     </nav>
