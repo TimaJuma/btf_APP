@@ -112,9 +112,10 @@ body {
         font-size: 1.6rem;
         font-weight: 900;
         text-transform: uppercase;
-        color: #fff;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.637);
-        width: 100%; }
+        color: #20253a;
+        width: 100%; 
+       margin-bottom: 10px;
+      }
 
       .card__heading-span {
         padding: 1rem 2rem;
@@ -225,6 +226,7 @@ background-color:lime;
   right:10px;
 }
 .post_description{
+  margin-top: 30px;
 font-size: 20px;
 font-family: 'Open Sans Condensed', sans-serif;
 overflow: hidden;
