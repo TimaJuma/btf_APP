@@ -24,6 +24,16 @@
   flex-direction: row;
 }
 
+.text-area {
+  font-family: 'Poppins';
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: .5rem;
+  height: 2.5rem;
+  margin-right: .5rem;
+}
+
 .input {
   font-family: 'Poppins';
   border-top-right-radius: 20px;

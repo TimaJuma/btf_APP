@@ -58,7 +58,7 @@
 
 
 
-.login-form p, .sign-up-form p {
+form p {
   font-family: "Poppins";
   font-size: 2rem;
 }
