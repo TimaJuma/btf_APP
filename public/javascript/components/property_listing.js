@@ -11,8 +11,10 @@ $(() => {
 
     // create image URL
     let post_image;
-    if (item.img_url) post_image = item.img_url;
+    if (item.img_url) 
+    post_image = item.img_url;
     else post_image = "https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg"
+    console.log('post_image:', post_image);
 
     return `
     <div class="flip-card">

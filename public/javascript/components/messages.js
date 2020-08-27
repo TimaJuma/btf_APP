@@ -28,11 +28,14 @@ $(() => {
 
       if (res.messages[0].reciever_id == button.val()) {
         const div = document.createElement('div')
+        let time = res.messages[0].message_date
+        let newTime = new Date(time).toLocaleString('en-US');
         div.classList.add("msg-to")
         let rightMsg = 
         `
 
         <div class="msg-to-text">${res.messages[0].message}</div>
+        <span class="time">${newTime}</span>
 
         `;
       div.innerHTML = rightMsg;
@@ -44,6 +47,8 @@ $(() => {
         let leftMsg = 
         `
             <div class="msg-from-text">${res.messages[0].message}</div>
+            <span class="time">${newTime}</span>
+       
         `;
         div.innerHTML = leftMsg;
         msgBox.prepend(div);

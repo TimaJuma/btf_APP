@@ -34,9 +34,9 @@ $(() => {
       console.log('Added Class')
     }
     console.log('this button pressed', button.val());
-    getAllReservations()
-    .then(favourites => {
-      for (const post of favourites.reservations){
+    addAllItems()
+    .then(res => {
+      for (const post of res.reservations){
         if (post.id == button.val()) {
           console.log('Already exists in favs')
           removeFromFavs({item_id: Number(post.id), user_id: 1})          
@@ -55,7 +55,7 @@ $(() => {
 });
 
 
-// function getAllReservations() {
+// function addAllItems() {
 //   let url = "/api/reservations";
 //   return $.ajax({
 //     url,

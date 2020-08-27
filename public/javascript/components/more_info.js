@@ -42,8 +42,9 @@ $(() => {
       <div class="messaging">
         <form>
           <div class="msg-send">
+          <button class="btn-send" type="submit" data-item="${item.id}" value="${item.user_id}">&#8595;</button>
             <textarea rows="1" class="send_message" name="field3" placeholder="Message to ${item.name}"></textarea> 
-            <button class="btn-send" type="submit" data-item="${item.id}" value="${item.user_id}">&#8595;</button></div>
+            </div>
       </form>
       
       <div class="msg-itself">
@@ -61,15 +62,27 @@ $(() => {
     
     // iterate over messages and append proper message form to messaging box
         const msgBox = document.querySelector('.msg-itself');
+        console.log('ITEM:', item);
+        console.log('MSG:', messages);
 
     for (message of messages) {
-      if (message.sender_id == user.id) {
+      if (message.sender_id !== user.id) {
         const div = document.createElement('div')
-        div.classList.add("msg-to")
+        // let name = item.name
+        // let id = item.id
+        let time = item.date_of_post
+       
+        // console.log('NAME FROM more_info',message)
+        let newTime = new Date(time).toLocaleString('en-US');
+        div.classList.add("msg-from")
         let rightMsg = 
         `
-
-        <div class="msg-to-text">${message.message}</div>
+        <span class="info-msg"><i class="fa fa-envelope" aria-hidden="true"></i> ${message.email} &nbsp; <i class="fa fa-phone" aria-hidden="true"></i> ${message.tel}</span>
+        <span class="name-msg"> ~ ${message.name}</span> 
+        <div class="msg-from-text">${message.message}</div>
+        <span class="time">${newTime}</span>
+        
+  
 
         `;
       div.innerHTML = rightMsg;
@@ -77,10 +90,14 @@ $(() => {
       }
       else {
         const div = document.createElement('div')
-        div.classList.add("msg-from")
+        let time = item.date_of_post
+        let name = item.name
+        let newTime = new Date(time).toLocaleString('en-US');
+        div.classList.add("msg-to")
         let leftMsg = 
         `
-            <div class="msg-from-text">${message.message}</div>
+            <div class="msg-to-text">${message.message}</div>
+            <span class="time">${newTime}</span>
         `;
         div.innerHTML = leftMsg;
         msgBox.append(div);
@@ -114,5 +131,7 @@ $(() => {
         });
       }
       window.addMoreInfo = addMoreInfo;
+
+
   
   });
