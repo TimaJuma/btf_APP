@@ -7,22 +7,25 @@ $(() => {
     window.$moreContainer = $moreContainer;
   
       function moreInfo(user, item, messages){
-        let render_image;
+        let post_image;
+        
+        if (item.img_url) post_image = item.img_url;
+        else post_image = "https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg"
 
     let html = `
     <div class="more_info_box">
       <!-- info owner + pic  -->
       <div class="more_info_box-left">
-      <img class="more_info-img" src="https://www.catster.com/wp-content/uploads/2016/10/perfect-cat-photos-Penny-600x600.jpg" alt="cat">
+      <img class="more_info-img" src="${post_image}" alt="${item.title}">
       <div class="dark-header"> <button class="like-btn" id="${user.id}" value="${user.id}" data-user_id="${user.id}"><span class="heart">&#9829;</span></button></div>
-      <div class="more_info-price">Price: $ ${item.price / 100.0}</div>
-      <div class="more_info-city">City: ${item.city} </div>   
+      <div class="more_info-price"><i class="fa fa-money" aria-hidden="true"></i> ${item.price / 100.0} CAD</div>
+      <div class="more_info-city"><i class="fa fa-map-marker" aria-hidden="true"></i> ${item.city} </div>   
       
       <div class="owner">
-      <h5>Owner: ${item.name}</h5>
-        <ul>
-          <li>telephone: ${item.tel}  &#9830; email: ${item.email} </li>
-        </ul>
+      <h5>Owner: ${item.name} <span class="small_info"> ( <i class="fa fa-phone" aria-hidden="true"></i> ${item.tel}&nbsp;&nbsp;&nbsp;
+      <i class="fa fa-envelope" aria-hidden="true"></i> ${item.email} ) </span></h5>
+      
+        
       </div>
 
       </div> 
@@ -39,7 +42,8 @@ $(() => {
       <div class="messaging">
         <form>
           <div class="msg-send">
-            <textarea rows="1" class="send_message" name="field3" placeholder="Message"></textarea> <input class="btn-send" type="submit" value="&#8593;" /></div>
+            <textarea rows="1" class="send_message" name="field3" placeholder="Message to ${item.name}"></textarea> 
+            <button class="btn-send" type="submit" data-item="${item.id}" value="${item.user_id}">&#8595;</button></div>
       </form>
       
       <div class="msg-itself">
@@ -61,11 +65,11 @@ $(() => {
     for (message of messages) {
       if (message.sender_id == user.id) {
         const div = document.createElement('div')
-        div.classList.add("msg-from")
+        div.classList.add("msg-to")
         let rightMsg = 
         `
 
-        <div class="msg-from-text">${message.message}</div>
+        <div class="msg-to-text">${message.message}</div>
 
         `;
       div.innerHTML = rightMsg;
@@ -73,10 +77,10 @@ $(() => {
       }
       else {
         const div = document.createElement('div')
-        div.classList.add("msg-to")
+        div.classList.add("msg-from")
         let leftMsg = 
         `
-            <div class="msg-to-text">${message.message}</div>
+            <div class="msg-from-text">${message.message}</div>
         `;
         div.innerHTML = leftMsg;
         msgBox.append(div);

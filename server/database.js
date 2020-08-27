@@ -276,6 +276,7 @@ const addProperty = function(property) {
   .catch(err => console.err('Query error', err));
 }
 
+exports.addProperty = addProperty;
 
 
 /// MESSAGES ======================================================
@@ -296,5 +297,19 @@ const getAllMsg = (user_id) => {
 };
 exports.getAllMsg = getAllMsg;
 
+const addMessage = (msg) => {
+  return pool.query(`
+  INSERT INTO messages(sender_id, reciever_id,message,item_id)
+  VALUES($1, $2, $3, $4);
+    `, [msg.sender_id, Number(msg.reciever_id), msg.text_body, Number(msg.item_id)])
+    .then(res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.error('query error', err.stack);
+      return null;
+    });
+};
+exports.addMessage = addMessage;
 
-exports.addProperty = addProperty;
+
