@@ -547,7 +547,7 @@ opacity: 0;
   .search-property-form label, .login-form label, .new-property-form label, .sign-up-form label {
     display: none; }
   .search-property-form textarea, .search-property-form select, .search-property-form input, .search-property-form label, .login-form textarea, .login-form select, .login-form input, .login-form label, .new-property-form textarea, .new-property-form select, .new-property-form input, .new-property-form label, .sign-up-form textarea, .sign-up-form select, .sign-up-form input, .sign-up-form label {
-    width: 100%; }
+     }
 
 .page-header__user-links ul {
   list-style: none;
@@ -558,6 +558,7 @@ opacity: 0;
     cursor: pointer; }
 
 .hidden {
-  display: none; }
+  display: none; 
+}
 
 /*# sourceMappingURL=main.css.map */

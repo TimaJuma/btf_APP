@@ -4,15 +4,22 @@ $(() => {
 
   const $newPropertyForm = $(`
   <form action="/api/items" method="post" id="new-property-form" class="new-property-form">
-  <div class="new-property-form__field-wrapper">
-    <label for="new-property-form__title">Title</label>
-    <input type="text" name="title" placeholder="Title" id="new-property-form__title">
-  </div>
+  <p>Create ad</p>
   
+  <div class="input-group mb-3 new-property-form__field-wrapper">
+  <div class="input-group-prepend">
+    <label for="new-property-form__title">Title</label>
+    <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+  </div>
+  <input class="input form-control" type="text" name="title" placeholder="Title" id="new-property-form__title">
+</div>
+
   <div class="new-property-form__field-wrapper">
     <label for="new-property-form__description">Description</label>
-    <textarea placeholder="Description" name="description" id="property-form__description" cols="30" rows="10"></textarea>
+    <textarea class="text-area form-control" placeholder="Description" name="description" id="property-form__description" cols="30" rows="10"></textarea>
   </div>
+
+
   <!-- <div class="new-property-form__field-wrapper">
       <label for="new-property-form__type">Type</label>
       <select id="new-property-form__type" name="type">

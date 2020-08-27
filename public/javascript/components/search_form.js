@@ -20,21 +20,24 @@ $(() => {
       <input type="input" name='city' class="input form-control" placeholder="city" id="search-property-form__city">
     </div>
 
-
     <div class="input-group mb-3 search-property-form__field-wrapper">
-      <div class="input-group-prepend">
-        <label for="search-property-form__minimum-price-per-night">Minimum Cost</label>
-        <span class="input-group-text" id="basic-addon1"><i class="fa fa-minus" aria-hidden="true"></i></span>
-      </div>
-      <input class='input' type="number" min='0' name="minimum_price" placeholder="Minimum Cost" id="search-property-form__minimum-price-per-night">
-
-      <div class="input-group-prepend">
-        <label for="search-property-form__maximum-price-per-night">Maximum Cost</label>
-        <span class="input-group-text" id="basic-addon1"><i class="fa fa-plus" aria-hidden="true"></i></span>
-      </div>
-      <input class='input' type="number" name="maximum_price" placeholder="Maximum Cost" id="search-property-form__maximum-price-per-night">
+    <div class="input-group-prepend">
+      <label for="search-property-form__minimum-price-per-night">Minimum Cost</label>
+      <span class="input-group-text" id="basic-addon1"><i class="fa fa-minus" aria-hidden="true"></i></span>
     </div>
-     
+    <input class='input' type="number" min='0' name="minimum_price" placeholder="Minimum Cost" id="search-property-form__minimum-price-per-night">
+  </div>
+
+
+
+  
+  <div class="input-group mb-3 search-property-form__field-wrapper">
+  <div class="input-group-prepend">
+  <label for="search-property-form__maximum-price-per-night">Maximum Cost</label>
+  <span class="input-group-text" id="basic-addon1"><i class="fa fa-plus" aria-hidden="true"></i></span>
+  </div>
+  <input class='input' type="number" name="maximum_price" placeholder="Maximum Cost" id="search-property-form__maximum-price-per-night">
+</div>
 
       <div class="search-property-form__field-wrapper">
           <button class='btn search-btn'><i class="fa fa-search"></i> Search</button>
