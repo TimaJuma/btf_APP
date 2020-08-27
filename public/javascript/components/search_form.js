@@ -1,7 +1,7 @@
 $(() => {
 
   const $searchPropertyForm = $(`
-  <form action="/items" method="post" id="search-property-form" class="search-property-form">
+  <form action="/items" method="post" id="search-property-form" class="search-property-form"  data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
 
     <div class="input-group mb-3 search-property-form__field-wrapper">
       <div class="input-group-prepend">

@@ -12,16 +12,16 @@ $(() => {
       userLinks = `
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
-      <a class="navbar-brand" href="#">BTF Sales</a>
+      <a class="home navbar-brand">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="custom-toggler navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto">
-          <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
-          <li class="search_button nav-item nav-link">Search</li>
-          <li class="login_button nav-item nav-link">Log In</li>
-          <li class="sign-up_button nav-item nav-link">Sign Up</li>
+          <li class="home nav-item nav-link my-auto" href="#">Home<span class="sr-only">(current)</span></li>
+          <li class="search_button nav-item nav-link my-auto">Search</li>
+          <li class="login_button nav-item nav-link my-auto">Log In</li>
+          <li class="sign-up_button nav-item nav-link my-auto">Sign Up</li>
           <form class="form-inline my-auto">
           <div class="input-group">
           <div class="input-group-prepend">
@@ -39,7 +39,7 @@ $(() => {
       userLinks = `
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
-      <a class="navbar-brand" href="#">BTF Sales</a>
+      <a class="home navbar-brand">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
