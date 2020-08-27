@@ -16,7 +16,7 @@ module.exports = function(router, database) {
       res.error("💩");
       return;
     }
-    database.getAllReservations(userId)
+    database.getMyFavs(userId)
     .then(reservations => res.send({reservations}))
     .catch(e => {
       console.error(e);
@@ -31,7 +31,7 @@ module.exports = function(router, database) {
       res.error("💩");
       return;
     }
-    database.getAllMsg(userId)
+    database.getAllMsg()
     .then(messages => res.send({messages}))
     .catch(e => {
       console.error(e);

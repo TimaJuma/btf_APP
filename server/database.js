@@ -81,17 +81,17 @@ exports.addUser = addUser;
 
 
 
-/// RESERVATIONS ===============================================================================
+/// FAVOURITES ===============================================================================
 
-// Get all reservations for a single user.
-const getAllReservations = (guest_id) => {
+// Get all favourites for a single user.
+const getMyFavs = (current_user) => {
   return pool.query(`
-  SELECT items.*, name, email, tel
-  FROM favourites
-  JOIN items ON items.id = favourites.item_id 
-  JOIN users ON users.id = favourites.user_id
+  SELECT items.*, name, email, tel, img_url
+  FROM items
+  JOIN users ON users.id = user_id
+  LEFT JOIN item_images ON items.id = item_id
   WHERE users.id = $1;
-    `, [guest_id])
+    `, [current_user])
     .then(res => {
       return res.rows;
     })
@@ -100,7 +100,7 @@ const getAllReservations = (guest_id) => {
       return null;
     });
 };
-exports.getAllReservations = getAllReservations;
+exports.getMyFavs = getMyFavs;
 
 
 // const addToFavorites = (liked) => {
@@ -280,14 +280,15 @@ exports.addProperty = addProperty;
 
 
 /// MESSAGES ======================================================
-const getAllMsg = (user_id) => {
+const getAllMsg = () => {
   return pool.query(`
-    SELECT *
-    FROM messages
-    WHERE sender_id = $1 OR reciever_id = $2
+  SELECT messages.*, name, email, tel
+    FROM messages 
+    JOIN users ON reciever_id = users.id
     ORDER BY message_date DESC;
-    `, [user_id, user_id])
+    `)
     .then(res => {
+      console.log('get all the msg FROM DB', res.rows)
       return res.rows;
     })
     .catch(err => {

@@ -374,6 +374,8 @@ background: #fff;
 }
 
 .messaging{
+  overflow-x: hidden;
+  overflow-y: auto;
   text-align: center;
   padding: 10px;
   display: flex;
@@ -427,10 +429,22 @@ background: #fff;
 border-radius:50%;
 width: 30px;
 height: 30px;
-background-color: #20253a;
+background-color: rgb(230, 230, 230);
+margin-right: 3px;
 color:white;
 outline: none;
 border:none;
+transition: all .2s;
+}
+.btn-send:hover{
+  background-color: rgb(119, 119, 119);
+}
+.btn-send:active{
+  outline: none;
+  background-color: #20253a;
+}
+.btn-send:focus{
+  outline: none;
 }
 
 .more_info-city,
@@ -460,6 +474,12 @@ border:none;
   border-radius:20px;
   padding: 8px;
   font-size: 14px;
+}
+.time{
+  text-align-last: left;
+  font-style: italic;
+  font-size: 10px;
+  color:rgb(197, 197, 197);
 }
 
 .msg-to{

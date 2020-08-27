@@ -42,8 +42,9 @@ $(() => {
       <div class="messaging">
         <form>
           <div class="msg-send">
+          <button class="btn-send" type="submit" data-item="${item.id}" value="${item.user_id}">&#8595;</button>
             <textarea rows="1" class="send_message" name="field3" placeholder="Message to ${item.name}"></textarea> 
-            <button class="btn-send" type="submit" data-item="${item.id}" value="${item.user_id}">&#8595;</button></div>
+            </div>
       </form>
       
       <div class="msg-itself">
@@ -63,13 +64,16 @@ $(() => {
         const msgBox = document.querySelector('.msg-itself');
 
     for (message of messages) {
-      if (message.sender_id == user.id) {
+      if (message.sender_id !== user.id) {
         const div = document.createElement('div')
-        div.classList.add("msg-to")
+        let time = item.date_of_post
+        let newTime = new Date(time).toLocaleString('en-US');
+        div.classList.add("msg-from")
         let rightMsg = 
         `
 
-        <div class="msg-to-text">${message.message}</div>
+        <div class="msg-from-text">${message.message}</div>
+        <span class="time">${newTime}</span>
 
         `;
       div.innerHTML = rightMsg;
@@ -77,10 +81,13 @@ $(() => {
       }
       else {
         const div = document.createElement('div')
-        div.classList.add("msg-from")
+        let time = item.date_of_post
+        let newTime = new Date(time).toLocaleString('en-US');
+        div.classList.add("msg-to")
         let leftMsg = 
         `
-            <div class="msg-from-text">${message.message}</div>
+            <div class="msg-to-text">${message.message}</div>
+            <span class="time">${newTime}</span>
         `;
         div.innerHTML = leftMsg;
         msgBox.append(div);
@@ -114,5 +121,7 @@ $(() => {
         });
       }
       window.addMoreInfo = addMoreInfo;
+
+
   
   });
