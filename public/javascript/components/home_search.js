@@ -26,6 +26,7 @@ $(() => {
 </div>
 </div>
     `)
+    
     window.$home_search= $home_search;
   });
   
