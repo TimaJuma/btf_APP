@@ -227,6 +227,9 @@ background-color:lime;
 .post_description{
 font-size: 20px;
 font-family: 'Open Sans Condensed', sans-serif;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 
 /* MODAL */
@@ -277,7 +280,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 95%;
+  width: 85%;
   height: 90%;
 }
 
@@ -391,10 +394,16 @@ background: #fff;
   height: 100%;
 }
 .owner{
+  position: absolute;
+  bottom:7px;
   font-family: 'Alata', sans-serif;
+  /* font-style: italic; */
+}
+.small_info{
   font-size: 14px;
-  font-style: italic;
-  margin-top: 25px;
+}
+.owner h5{
+  margin-bottom: -2px;
 }
 .send_message{
   height: 30px;
@@ -450,6 +459,7 @@ border:none;
   height: auto;
   border-radius:20px;
   padding: 8px;
+  font-size: 14px;
 }
 
 .msg-to{

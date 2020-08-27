@@ -54,6 +54,14 @@ function addtoFavs(data) {
   });
 }
 
+function addMsg(data) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/messages",
+    data,
+  });
+}
+
 function removeFromFavs(data) {
   return $.ajax({
     method: "POST",
