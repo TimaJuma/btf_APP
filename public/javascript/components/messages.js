@@ -48,6 +48,7 @@ $(() => {
         `
             <div class="msg-from-text">${res.messages[0].message}</div>
             <span class="time">${newTime}</span>
+       
         `;
         div.innerHTML = leftMsg;
         msgBox.prepend(div);

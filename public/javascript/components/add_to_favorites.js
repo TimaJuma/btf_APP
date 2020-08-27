@@ -34,7 +34,7 @@ $(() => {
       console.log('Added Class')
     }
     console.log('this button pressed', button.val());
-    getMyFavs()
+    addAllItems()
     .then(res => {
       for (const post of res.reservations){
         if (post.id == button.val()) {
@@ -55,7 +55,7 @@ $(() => {
 });
 
 
-// function getMyFavs() {
+// function addAllItems() {
 //   let url = "/api/reservations";
 //   return $.ajax({
 //     url,

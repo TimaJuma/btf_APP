@@ -39,7 +39,7 @@ function getAllListings(params) {
   });
 }
 
-function getMyFavs() {
+function addAllItems() {
   let url = "/api/reservations";
   return $.ajax({
     url,

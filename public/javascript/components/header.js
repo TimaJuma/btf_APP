@@ -86,7 +86,7 @@ $(() => {
 
   $("header").on("click", '.my_reservations_button', function() {
     propertyListings.clearListings();
-    getMyFavs()
+    addAllItems()
       .then(function(json) {
         propertyListings.addProperties(json.reservations, true);
         views_manager.show('listings');
@@ -94,7 +94,7 @@ $(() => {
       .catch(error => console.error(error));
   });
 
-
+  
   $("header").on("click", '.my_listing_button', function() {
     propertyListings.clearListings();
     getAllListings(`user_id=${currentUser.id}`)

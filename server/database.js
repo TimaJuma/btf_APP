@@ -284,7 +284,7 @@ const getAllMsg = () => {
   return pool.query(`
   SELECT messages.*, name, email, tel
     FROM messages 
-    JOIN users ON reciever_id = users.id
+    JOIN users ON sender_id = users.id
     ORDER BY message_date DESC;
     `)
     .then(res => {

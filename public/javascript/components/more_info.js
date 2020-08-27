@@ -62,18 +62,27 @@ $(() => {
     
     // iterate over messages and append proper message form to messaging box
         const msgBox = document.querySelector('.msg-itself');
+        console.log('ITEM:', item);
+        console.log('MSG:', messages);
 
     for (message of messages) {
       if (message.sender_id !== user.id) {
         const div = document.createElement('div')
+        // let name = item.name
+        // let id = item.id
         let time = item.date_of_post
+       
+        // console.log('NAME FROM more_info',message)
         let newTime = new Date(time).toLocaleString('en-US');
         div.classList.add("msg-from")
         let rightMsg = 
         `
-
+        <span class="info-msg"><i class="fa fa-envelope" aria-hidden="true"></i> ${message.email} &nbsp; <i class="fa fa-phone" aria-hidden="true"></i> ${message.tel}</span>
+        <span class="name-msg"> ~ ${message.name}</span> 
         <div class="msg-from-text">${message.message}</div>
         <span class="time">${newTime}</span>
+        
+  
 
         `;
       div.innerHTML = rightMsg;
@@ -82,6 +91,7 @@ $(() => {
       else {
         const div = document.createElement('div')
         let time = item.date_of_post
+        let name = item.name
         let newTime = new Date(time).toLocaleString('en-US');
         div.classList.add("msg-to")
         let leftMsg = 
