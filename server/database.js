@@ -87,9 +87,10 @@ exports.addUser = addUser;
 const getMyFavs = (current_user) => {
   return pool.query(`
   SELECT items.*, name, email, tel, img_url
-  FROM items
-  JOIN users ON users.id = user_id
-  LEFT JOIN item_images ON items.id = item_id
+  FROM favourites
+  JOIN items ON items.id = favourites.item_id 
+  JOIN users ON users.id = favourites.user_id
+  LEFT JOIN item_images ON items.id = item_images.item_id
   WHERE users.id = $1;
     `, [current_user])
     .then(res => {
@@ -227,11 +228,9 @@ const getAllProperties = function(options, limit = 10) {
   ORDER BY price
   LIMIT $${queryParams.length};
   `;
-console.log('Query string:', queryString);
-  console.log('QUERY: ', queryString, queryParams);
+
   return pool.query(queryString, queryParams)
     .then(res => {
-      console.log(res.rows);
       return res.rows;
     })
     .catch(err => {
@@ -267,8 +266,7 @@ const addProperty = function(property) {
                         RETURNING *;
                         `;
 
- console.log('QUERY string: ',addPropQuery);
- console.log('QUERY values: ', queryValues)
+
   return pool.query(addPropQuery, queryValues)
   .then(res => {
     res.rows[0];
@@ -288,7 +286,6 @@ const getAllMsg = () => {
     ORDER BY message_date DESC;
     `)
     .then(res => {
-      console.log('get all the msg FROM DB', res.rows)
       return res.rows;
     })
     .catch(err => {
