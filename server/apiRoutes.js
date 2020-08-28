@@ -1,7 +1,6 @@
 module.exports = function(router, database) {
 
   router.get('/items', (req, res) => {
-    console.log('req.query: ',req.query)
     database.getAllProperties(req.query, 200)
     .then(properties => res.send({properties}))
     .catch(e => {

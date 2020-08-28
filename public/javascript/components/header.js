@@ -20,7 +20,7 @@ $(() => {
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto">
           <li class="home nav-item nav-link my-auto" href="#">Home<span class="sr-only">(current)</span></li>
-          <li class="search_button nav-item nav-link my-auto">Search</li>
+          <li class="search_button nav-item nav-link my-auto">Advanced search</li>
           <li class="login_button nav-item nav-link my-auto">Log In</li>
           <li class="sign-up_button nav-item nav-link my-auto">Sign Up</li>
           <form class="form-inline my-auto">
@@ -55,7 +55,7 @@ $(() => {
           <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
             <a class="create_listing_button dropdown-item" href="#">Create ad</a>
             <a class="my_listing_button dropdown-item" href="#">My ads</a>
-            <a class="search_button dropdown-item" href="#">Search</a>
+            <a class="search_button dropdown-item" href="#">Advanced search</a>
             <a class="my_reservations_button dropdown-item" href="#">Favourites</a>
             <a class="logout_button dropdown-item" href="#">Logout</a>
           </div>
