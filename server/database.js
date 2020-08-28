@@ -87,9 +87,10 @@ exports.addUser = addUser;
 const getMyFavs = (current_user) => {
   return pool.query(`
   SELECT items.*, name, email, tel, img_url
-  FROM items
-  JOIN users ON users.id = user_id
-  LEFT JOIN item_images ON items.id = item_id
+  FROM favourites
+  JOIN items ON items.id = favourites.item_id 
+  JOIN users ON users.id = favourites.user_id
+  LEFT JOIN item_images ON items.id = item_images.item_id
   WHERE users.id = $1;
     `, [current_user])
     .then(res => {
@@ -227,11 +228,9 @@ const getAllProperties = function(options, limit = 10) {
   ORDER BY price
   LIMIT $${queryParams.length};
   `;
-console.log('Query string:', queryString);
-  console.log('QUERY: ', queryString, queryParams);
+
   return pool.query(queryString, queryParams)
     .then(res => {
-      console.log(res.rows);
       return res.rows;
     })
     .catch(err => {
@@ -251,27 +250,42 @@ const addProperty = function(property) {
   const propertyValues = [];
   const queryValues = [];
 
+  let queryValuesImg;
+  // const itemKeysImg = [];
+
+
 
   for (const key in property) {
     if(key === 'price'){
       property[key] = Number(property[key]) * 100;
+    } else if(key === 'img_url'){
+        // itemKeysImg.push(key);
+        queryValuesImg = property[key];
+        continue;
     }
     propertyKeys.push(key);
     propertyValues.push(`$${propertyKeys.length}`);
     queryValues.push(property[key]);
   }
   
-
   let addPropQuery = `INSERT INTO items (${propertyKeys.join(', ')}) 
                         VALUES (${propertyValues.join(', ')})
                         RETURNING *;
                         `;
 
- console.log('QUERY string: ',addPropQuery);
- console.log('QUERY values: ', queryValues)
+
   return pool.query(addPropQuery, queryValues)
   .then(res => {
-    res.rows[0];
+    return res.rows[0];
+  })
+  .then((data) => {
+  return pool.query(`
+    INSERT INTO item_images (item_id, img_url)
+    VALUES($1, $2);
+  `, [data.id, queryValuesImg])
+  })
+  .then(res => {
+    return res.rows;
   })
   .catch(err => console.err('Query error', err));
 }
@@ -288,7 +302,6 @@ const getAllMsg = () => {
     ORDER BY message_date DESC;
     `)
     .then(res => {
-      console.log('get all the msg FROM DB', res.rows)
       return res.rows;
     })
     .catch(err => {

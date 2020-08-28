@@ -29,14 +29,8 @@ $(() => {
   </div>
 
   <div class="new-property-form__field-wrapper">
-    <label for="new-property-form__thumbnail">Thumbnail Image</label>
-    <input placeholder="Thumbnail Image" type="text" id="new-property-form__thumbnail">
-  </div>
-
-
-  <div class="new-property-form__field-wrapper">
     <label for="new-property-form__cover">Cover Image</label>
-    <input placeholder="Cover Image" type="text"  id="new-property-form__cover">
+    <input placeholder="Cover Image" type="text" id="new-property-form__cover" name="img_url">
   </div>
 
   <div class="input-group mb-3 new-property-form__field-wrapper">
