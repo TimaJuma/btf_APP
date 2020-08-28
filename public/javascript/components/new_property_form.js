@@ -25,12 +25,7 @@ $(() => {
       <label for="new-property-form__title">Title</label>
       <span class="input-group-text" id="basic-addon1"><i class="fa fa-dollar" aria-hidden="true"></i></span>
     </div>
-    <input class="input form-control" type="number" step="0.01" min="0 name="price" placeholder="price" id="new-property-form__cost">
-  </div>
-
-  <div class="new-property-form__field-wrapper">
-    <label for="new-property-form__cover">Cover Image</label>
-    <input placeholder="Cover Image" type="text" id="new-property-form__cover" name="img_url">
+    <input class="input form-control" type="number" step="0.01" min="0" name="price" placeholder="price" id="new-property-form__cost">
   </div>
 
   <div class="input-group mb-3 new-property-form__field-wrapper">
@@ -38,7 +33,7 @@ $(() => {
     <label for="new-property-form__cover">Cover Image</label>
     <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
   </div>
-  <input class="input form-control" type="text" name="title" placeholder="image url" id="new-property-form__title">
+  <input class="input form-control" type="text" name="img_url" placeholder="image url" id="new-property-form__title">
 </div>
 
     <div class="new-property-form__field-wrapper mb-3">
