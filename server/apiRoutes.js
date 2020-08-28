@@ -16,10 +16,13 @@ module.exports = function(router, database) {
       res.error("💩");
       return;
     }
+
+    console.log('GET for reservations activated')
     database.getMyFavs(userId)
-    .then(reservations =>{
-      console.log('reservations FROM apiRoutes!: ',reservations)
-      res.send({reservations})})
+    .then(reservations => {
+      console.log('Data came back from DB to API ROUTEES', reservations)
+      res.send({reservations})
+    })
     .catch(e => {
       console.error(e);
       res.send(e)
@@ -60,13 +63,13 @@ module.exports = function(router, database) {
 
 
   router.post('/favorites', (req,res) => {
-    console.log(req.body);
+    console.log('POST TO FAVS', req.body);
     req.body.user_id = req.session.userId;
     database.addToFavorites(req.body);
   })
 
   router.post('/favorites/delete', (req,res) => {
-    console.log(req.body);
+    console.log('DELETE FROM FAVS', req.body);
     req.body.user_id = req.session.userId;
     database.removeFavs(req.body);
   })
@@ -74,7 +77,6 @@ module.exports = function(router, database) {
 
   router.post('/messages', (req,res) => {
     req.body.sender_id = req.session.userId;
-    console.log(req.body);
     res.send(req.body);
     database.addMessage(req.body);
   })
