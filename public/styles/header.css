@@ -34,6 +34,13 @@
   margin-right: .5rem;
 }
 
+.dropdown-input {
+  font-family: 'Poppins';
+  border: none;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+}
+
 .input {
   font-family: 'Poppins';
   border-top-right-radius: 20px;
@@ -56,12 +63,12 @@
   width: 100%;
 }
 
-#advanced-search-button {
-  display: none;
+.advanced-btn {
+  visibility: hidden;
 }
 
-form:hover + #advanced-search-button {
-  display: block;
+.home-search-form:hover .advanced-btn {
+  visibility: visible;
   transition: .5s;
 }
 

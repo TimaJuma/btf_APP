@@ -1,7 +1,7 @@
 $(() => {
 
   const $signUpForm = $(`
-  <form id="sign-up-form" class="sign-up-form" data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
+  <form id="sign-up-form" class="sign-up-form my-5" data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
         <p>Sign Up</p>
 
           <div class="input-group mb-3 sign-up-form__field-wrapper">

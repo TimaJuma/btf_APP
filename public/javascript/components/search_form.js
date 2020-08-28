@@ -1,14 +1,14 @@
 $(() => {
 
   const $searchPropertyForm = $(`
-  <form action="/items" method="post" id="search-property-form" class="search-property-form"  data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
-
+  <form action="/items" method="post" id="search-property-form" class="search-property-form my-5"  data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
+    <p>Search ads</p>
     <div class="input-group mb-3 search-property-form__field-wrapper">
       <div class="input-group-prepend">
         <label for="search-property-form__minimum-rating">Title</label>
         <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
       </div>
-      <input type="input" name='title' class="input form-control" placeholder="Title" id="search-property-form__minimum-rating">
+      <input type="input" name='title' class="input form-control" placeholder="title" id="search-property-form__minimum-rating">
     </div>
 
 
@@ -19,7 +19,7 @@ $(() => {
       </div>
       <input type="input" name='city' class="input form-control" placeholder="city" id="search-property-form__city">
     </div>
-
+    <div class="form-row">
     <div class="input-group mb-3 search-property-form__field-wrapper">
     <div class="input-group-prepend">
       <label for="search-property-form__minimum-price-per-night">Minimum Cost</label>
@@ -38,10 +38,10 @@ $(() => {
   </div>
   <input class='input' type="number" name="maximum_price" placeholder="Maximum Cost" id="search-property-form__maximum-price-per-night">
 </div>
-
+</div>
       <div class="search-property-form__field-wrapper">
           <button class='btn search-btn'><i class="fa fa-search"></i> Search</button>
-          <a id="search-property-form__cancel" href="#">Cancel</a>
+          <a id="search-property-form__cancel" class="my-auto ml-3" href="#">Cancel</a>
       </div>
     </form>
   `)

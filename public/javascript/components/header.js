@@ -60,7 +60,7 @@ $(() => {
           </div>
         </li>
 
-        <form class="form-inline my-auto">
+        <form action='/items' class="form-inline my-auto">
         <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>
