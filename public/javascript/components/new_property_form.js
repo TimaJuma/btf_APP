@@ -90,7 +90,6 @@ $(() => {
     views_manager.show('none');
 
     const data = $(this).serialize();
-    console.log('Data from addItem form: ', data);
     submitProperty(data)
       .then(() => {
         views_manager.show('listings');

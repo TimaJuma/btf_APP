@@ -62,8 +62,6 @@ $(() => {
     
     // iterate over messages and append proper message form to messaging box
         const msgBox = document.querySelector('.msg-itself');
-        console.log('ITEM:', item);
-        console.log('MSG:', messages);
 
     for (message of messages) {
       if (message.sender_id !== user.id) {
@@ -72,7 +70,6 @@ $(() => {
         // let id = item.id
         let time = item.date_of_post
        
-        // console.log('NAME FROM more_info',message)
         let newTime = new Date(time).toLocaleString('en-US');
         div.classList.add("msg-from")
         let rightMsg = 
@@ -123,10 +120,8 @@ $(() => {
           for (const item of data[1].properties){
             if (item.id == item_id) itemData = item
           }
-          console.log('ItemDAta', itemData)
           const userID = data[0].user.id
           const filteredMsg = data[2].messages.filter(msg => msg.item_id == itemData.id)
-          console.log('Filtered MSG', filteredMsg);
           moreInfo(data[0].user, itemData, filteredMsg);
         });
       }

@@ -55,7 +55,6 @@ $(() => {
     event.preventDefault();
 
     const data = $(this).serialize();
-    console.log('DATA is: ', data)
     signUp(data)
       .then(getMyDetails)
       .then((json) => {
