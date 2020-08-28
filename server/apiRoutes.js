@@ -46,7 +46,7 @@ module.exports = function(router, database) {
 
 
   router.post('/items', (req, res) => {
-    console.log('req:', req);
+    console.log('req to add new item:', req.body);
     console.log('res:', res);
     const userId = req.session.userId;
     database.addProperty({...req.body, user_id: userId})
