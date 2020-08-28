@@ -25,6 +25,7 @@
 $(() => {
   console.log('content loaded');
   $(document).on('click', '.like-btn', function() {
+    console.log('like btn PUSHED!');
     const button = $(this);
     if (button.hasClass('active-like-button')) {
       button.removeClass("active-like-button")

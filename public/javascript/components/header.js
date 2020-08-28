@@ -13,16 +13,15 @@ $(() => {
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
       <a class="navbar-brand" id="home-page" href="#">BTF Sales</a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="custom-toggler navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto">
-          <li class="home nav-item nav-link my-auto" href="#">Home<span class="sr-only">(current)</span></li>
-          <li class="search_button nav-item nav-link my-auto">Search</li>
-          <li class="login_button nav-item nav-link my-auto">Log In</li>
-          <li class="sign-up_button nav-item nav-link my-auto">Sign Up</li>
+          <li class="home nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></li>
+          <li class="search_button nav-item nav-link">Search</li>
+          <li class="login_button nav-item nav-link">Log In</li>
+          <li class="sign-up_button nav-item nav-link">Sign Up</li>
           <form class="form-inline my-auto">
           <div class="input-group">
           <div class="input-group-prepend">
@@ -40,7 +39,6 @@ $(() => {
       userLinks = `
 
       <nav id="page-header__user-links" class="page-header__user-links navbar navbar-light navbar-expand-lg">
-
       <a class="navbar-brand" id="home-page" href="#">BTF Sales</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -54,8 +52,8 @@ $(() => {
           </a>
           <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
             <a class="create_listing_button dropdown-item" href="#">Create ad</a>
-            <a class="my_listing_button dropdown-item " href="#">My ads</a>
-            <a class="my_reservations_button dropdown-item" href="#">Favourites</a>
+            <a id="my_ads" class="my_listing_button dropdown-item " href="#">My ads</a>
+            <a id="my_favs" class="my_reservations_button dropdown-item" href="#">Favourites</a>
             <a class="logout_button dropdown-item" href="#">Logout</a>
           </div>
         </li>
@@ -96,7 +94,7 @@ $(() => {
   
    // ============ MY FAVS in HEADER ============
 
-  $("header").on("click", '.my_reservations_button', function() {
+  $("header").on("click", '#my_favs', function() {
     propertyListings.clearListings();
     addAllItems()
       .then(function(json) {
@@ -108,7 +106,7 @@ $(() => {
 
   // ============ MY ADS in HEADER ============
 
-  $("header").on("click", '.my_listing_button', function() {
+  $("header").on("click", '#my_ads', function() {
     propertyListings.clearListings();
     getAllListings(`user_id=${currentUser.id}`)
       .then(function(json) {

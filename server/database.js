@@ -85,6 +85,7 @@ exports.addUser = addUser;
 
 // Get all favourites for a single user.
 const getMyFavs = (current_user) => {
+  console.log('Making query from db with getMyFavs!!!!!!');
   return pool.query(`
   SELECT items.*, name, email, tel, img_url
   FROM items

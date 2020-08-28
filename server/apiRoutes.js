@@ -17,7 +17,9 @@ module.exports = function(router, database) {
       return;
     }
     database.getMyFavs(userId)
-    .then(reservations => res.send({reservations}))
+    .then(reservations =>{
+      console.log('reservations FROM apiRoutes!: ',reservations)
+      res.send({reservations})})
     .catch(e => {
       console.error(e);
       res.send(e)
