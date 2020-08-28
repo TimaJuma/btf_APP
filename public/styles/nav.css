@@ -55,9 +55,7 @@
 .input-group-text i {
   color: #6C63FF;
 }
-
-
-
+s
 form p {
   font-family: "Poppins";
   font-size: 2rem;
@@ -95,4 +93,4 @@ footer a:hover, footer .fa-github:hover {
   transition: ease-in-out .6s;
   color: #6C63FF;
   text-decoration: none;
-}s
+}

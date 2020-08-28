@@ -10,7 +10,7 @@ $(() => {
               <div class="homepage-header container">
               <div class="row">
                 <div class="col-lg-6 header-search-area">
-                  <form action="/items" method="POST">
+                  <form action="/items" method="POST" class='home-search-form'>
             
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -20,12 +20,10 @@ $(() => {
                       <input type="text" class="input form-control" placeholder="Search ads..." aria-label="Search">
                     </div>
             
-            
                     <button type="submit" class="btn search-btn"><i class="fa fa-search"></i></button>
-            
+
                   </form>
                 </div>
-            
                 <div class="col-lg-6 header-img-area">
                   <img data-aos='fade-in-right' id='header-img' src="images/undraw_deliveries_131a.svg" alt="">
                 </div>

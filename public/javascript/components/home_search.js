@@ -11,9 +11,8 @@ $(() => {
           <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
-        <input type="text" class="input form-control" placeholder="Search ads..." aria-label="Search">
+        <input type="text" class="input form-control" placeholder="Search ads..." aria-label="Search" autofocus>
       </div>
-
 
       <button type="submit" class="btn search-btn"><i class="fa fa-search"></i></button>
 

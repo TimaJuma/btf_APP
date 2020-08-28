@@ -1,7 +1,7 @@
 $(() => {
 
   const $logInForm = $(`
-  <form id="login-form" class="login-form" data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
+  <form id="login-form" class="login-form my-5" data-aos='fade-up' data-aos-delay="100" data-aos-duration="1000">
       <p>Login</p>
 
       <div class="input-group mb-3 login-form__field-wrapper">
