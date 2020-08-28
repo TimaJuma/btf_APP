@@ -32,12 +32,8 @@ $(() => {
     <input placeholder="Price" type="number"  step="0.01" min="0" name="price" id="new-property-form__cost">
   </div>
   <div class="new-property-form__field-wrapper">
-    <label for="new-property-form__thumbnail">Thumbnail Image</label>
-    <input placeholder="Thumbnail Image" type="text" id="new-property-form__thumbnail">
-  </div>
-  <div class="new-property-form__field-wrapper">
     <label for="new-property-form__cover">Cover Image</label>
-    <input placeholder="Cover Image" type="text"  id="new-property-form__cover">
+    <input placeholder="Cover Image" type="text" id="new-property-form__cover" name="img_url">
   </div>
   <hr>
     <div class="new-property-form__field-wrapper">

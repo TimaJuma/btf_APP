@@ -250,17 +250,24 @@ const addProperty = function(property) {
   const propertyValues = [];
   const queryValues = [];
 
+  let queryValuesImg;
+  // const itemKeysImg = [];
+
+
 
   for (const key in property) {
     if(key === 'price'){
       property[key] = Number(property[key]) * 100;
+    } else if(key === 'img_url'){
+        // itemKeysImg.push(key);
+        queryValuesImg = property[key];
+        continue;
     }
     propertyKeys.push(key);
     propertyValues.push(`$${propertyKeys.length}`);
     queryValues.push(property[key]);
   }
   
-
   let addPropQuery = `INSERT INTO items (${propertyKeys.join(', ')}) 
                         VALUES (${propertyValues.join(', ')})
                         RETURNING *;
@@ -269,7 +276,16 @@ const addProperty = function(property) {
 
   return pool.query(addPropQuery, queryValues)
   .then(res => {
-    res.rows[0];
+    return res.rows[0];
+  })
+  .then((data) => {
+  return pool.query(`
+    INSERT INTO item_images (item_id, img_url)
+    VALUES($1, $2);
+  `, [data.id, queryValuesImg])
+  })
+  .then(res => {
+    return res.rows;
   })
   .catch(err => console.err('Query error', err));
 }
