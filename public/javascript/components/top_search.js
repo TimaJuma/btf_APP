@@ -1,10 +1,11 @@
 $(() => {
-    
-    $(document).on('keydown', '#top-search', function(e) {
+
+    $(document).on('keydown', '.super-search', function(e) {
         if (e.which == 13) {
+            console.log('Button PUSHED!!! super-search')
             e.preventDefault();
-            let result = 'title=' + $('#top-search').val();
-            $('#top-search').val("");
+            let result = 'title=' + $(this).val();
+            $(this).val("");
             console.log(result);
 
         
