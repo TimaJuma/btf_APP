@@ -54,7 +54,8 @@ $(() => {
           </a>
           <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
             <a class="create_listing_button dropdown-item" href="#">Create ad</a>
-            <a class="my_listing_button dropdown-item " href="#">My ads</a>
+            <a class="my_listing_button dropdown-item" href="#">My ads</a>
+            <a class="search_button dropdown-item" href="#">Search</a>
             <a class="my_reservations_button dropdown-item" href="#">Favourites</a>
             <a class="logout_button dropdown-item" href="#">Logout</a>
           </div>
