@@ -158,7 +158,6 @@ exports.removeFavs = removeFavs;
 // WHERE title LIKE '%able%' AND price > 5000 AND price < 12000 AND city LIKE '%ancouver%';
 
 const getAllProperties = function(options, limit = 10) {
-  console.log('getAllProperties is activated');
   const queryParams = [];
   let queryString = `
   SELECT items.*, name, tel, email, img_url
