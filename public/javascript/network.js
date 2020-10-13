@@ -1,5 +1,4 @@
 function getMyDetails() {
-  console.log("getMyDetails");
   return $.ajax({
     url: "/users/me",
   });
@@ -32,7 +31,6 @@ function getAllListings(params) {
   let url = "/api/items";
   if (params) {
     url += "?" + params;
-    console.log('url: ', url);
   }
   return $.ajax({
     url,

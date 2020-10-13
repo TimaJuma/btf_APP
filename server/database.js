@@ -69,7 +69,6 @@ const addUser =  (user) => {
     RETURNING *;
     `, [user.name, user.email, user.tel, user.password])
     .then(res => {
-      console.log(res.rows[0]);
       return res.rows[0];
     })
     .catch(err => {
@@ -128,7 +127,6 @@ exports.getMyFavs = getMyFavs;
 
 
 const addToFavorites = (liked) => {
-  console.log('Adding to FAVS')
   return pool.query(`INSERT INTO favourites(user_id, item_id) VALUES($1, $2) RETURNING *`, [liked.user_id, liked.item_id])
     .then(res => res.rows[0])
     .catch(err => {
@@ -139,7 +137,6 @@ const addToFavorites = (liked) => {
 exports.addToFavorites = addToFavorites;
 
 const removeFavs = (liked) => {
-  console.log('Remove from FAVS')
   return pool.query(`DELETE FROM favourites WHERE user_id =$1 AND item_id =$2;`, [liked.user_id, liked.item_id])
     .then(res => res.rows[0])
     .catch(err => {

@@ -71,7 +71,6 @@ $(() => {
   $searchPropertyForm.on('submit', function(event) {
     event.preventDefault();
     const data = $(this).serialize();
-    console.log(data);
     // const data2 = $(this).serializeArray();
 
   
@@ -83,9 +82,7 @@ $(() => {
     // const formValues = {title, min_price, max_price, city};
 
     getAllListings(data).then(function( json ) {
-      console.log('json from search_form:', json)
       propertyListings.addProperties(json.properties);
-      console.log('json from search_form:', json.properties)
       views_manager.show('listings');
     });
   });
