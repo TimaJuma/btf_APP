@@ -48,7 +48,7 @@
   └── userRoutes.js
 ```
 
-### Project features
+## Project features
 
 1. Search for items by title.
 2. Advanced search with wider functionality (you can search by title, city, min and max price).
@@ -59,7 +59,7 @@
 7. You can see the list of your items.
 8. You can search even if you are not logged in.
 
-### Overview
+## Overview
 
 - `public` contains all of the HTML, CSS, and client side JavaScript.
   - `index.html` is the entry point to the application. It's the only html page because this is a single page application.
