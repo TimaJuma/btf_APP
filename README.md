@@ -50,14 +50,14 @@
 
 ## Project features
 
-1. Search for items by title.
-2. Advanced search with wider functionality (you can search by title, city, min and max price).
-3. Adding to favourites (or removing) by pressing the "heart" button.
-4. More info button(if you want to know more about item). Just press that button!
-5. Messaging with owner of the item. If you are the owner you can see all incoming messages and all the details about sender.
-6. Creating a new post.
-7. You can see the list of your items.
-8. You can search even if you are not logged in.
+&#10003; &nbsp; Search for items by title. <br/>
+&#10003; &nbsp; Advanced search with wider functionality (you can search by title, city, min and max price).<br/>
+&#10003; &nbsp; Adding to favourites (or removing) by pressing the "heart" button.<br/>
+&#10003; &nbsp; More info button(if you want to know more about item). Just press that button!<br/>
+&#10003; &nbsp; Messaging with owner of the item. If you are the owner you can see all incoming messages and all the details about sender.<br/>
+&#10003; &nbsp; Creating a new post.<br/>
+&#10003; &nbsp; You can see the list of your items.<br/>
+&#10003; &nbsp; You can search even if you are not logged in.<br/>
 
 ## Overview
 
