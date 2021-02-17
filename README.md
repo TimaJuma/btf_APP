@@ -4,15 +4,15 @@
 
 !['Login + Search + Chatting'](https://github.com/TimaJuma/btf_APP/blob/master/README%20DOCS/BTF_Login%2BSearch%2BChatting.gif)
 
-## Create nee Adding
+## Create new Adding.
 
 !['Creating new add'](https://github.com/TimaJuma/btf_APP/blob/master/README%20DOCS/BTF_CreateAdd.gif)
 
-## Adding to favourites
+## Adding to favourites.
 
 !['Adding to favourites'](https://github.com/TimaJuma/btf_APP/blob/master/README%20DOCS/BTF_AddingToFav.gif)
 
-## Project Structure
+## Project Structure.
 
 ```
 ├── public
